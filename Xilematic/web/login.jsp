@@ -1,45 +1,57 @@
 <%-- Document : login Created on : May 18, 2025, 1:27:57 AM Author : ADMIN --%>
 
-    <%@page contentType="text/html" pageEncoding="UTF-8" %>
-        <!DOCTYPE html>
-        <html>
+<%@page contentType="text/html" pageEncoding="UTF-8" %>
+<!DOCTYPE html>
+<html>
 
-        <head>
-            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-            <link rel="stylesheet" href="style/login_style.css">
-            <title>JSP Page</title>
-        </head>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Login</title>
+        <!--link css-->
+        <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/style/login_style.css">
+        <!--logo WEB-->
+        <link rel="icon" type="logo" href="asset/download.png" />
+    </head>
 
-        <body>
-            <div class="container">
-                <form action="" method="POST">
-                    <p>LOGIN</p>
-                    <div><input type="text" name="username"></div>
-                    <div><input type="text" name="password"></div>
-                    <div>
-                        <div>
-                            <input type="checkbox" name="remember" id="">
-                            <label for="">Remember me</label>
-                        </div>
+    <body>
+        <div class="login-box">
+            <form action="LoginServlet" method="POST">
+                <input type="checkbox" class="input-check" id="input-check">
+                <label for="input-check" class="toggle">
+                    <span class="text off">off</span>
+                    <span class="text on">on</span>
+                </label>
+                <div class="login-light"></div>
 
-                        <div>
-                            <a href="">Forgot passord?</a>
-                        </div>
-                    </div>
+                <h2>Login</h2>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person"></ion-icon></ion-icon></span>
+                    <input type="text" required name="username">
+                    <label>Username</label>
+                    <div class="input-line"></div>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" required name="password">
+                    <label>Password</label>
+                    <div class="input-line"></div>
+                </div>
 
-                    <div>
-                        <input type="submit" value="Login">
-                        <div>
-                            <div><img src="" alt=""></div>
-                            <div><img src="" alt=""></div>
-                        </div>
-                    </div>
-                    <div>
-                        <label for="register">Don't have an account?</label>
-                        <a href="">Register</a>
-                    </div>
-                </form>
-            </div>
-        </body>
+                <div class="remember-forgot">
+                    <label><input type="checkbox">Remember me</label>
+                    <a href="#">Forgot Password?</a>
+                </div>
+                <button type="submit">Login</button>
+                <!--<div class="error-message">${requestScope.errMsg}</div>-->
+                <div class="register-link">
+                    <p>Don't have an account? <a href="#">Register</a></p>
+                </div>
+            </form>
+            <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+            <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        </div>
 
-        </html>
+
+    </body>
+
+</html>
