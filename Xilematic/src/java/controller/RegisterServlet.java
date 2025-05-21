@@ -11,9 +11,10 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import model.User;
 
-@WebServlet(name = "LoginServlet", urlPatterns = {"/LoginServlet"})
-public class LoginServlet extends HttpServlet {
+@WebServlet(name = "RegisterServlet", urlPatterns = {"/RegisterServlet"})
+public class RegisterServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -24,24 +25,21 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        UserDAO userDao = new UserDAO();
-        var user = userDao.selectByUsername(username);
-
-        if (user == null) {
-            request.setAttribute("errorMsg", "This user does not exist!");
-            request.getRequestDispatcher("login.jsp").forward(request, response);
-        } else if (!password.equals(user.getPassword())) {
-            request.setAttribute("errorMsg", "Wrong password!");
-            request.getRequestDispatcher("login.jsp").forward(request, response);
+        UserDAO udao = new UserDAO();
+        if (udao.selectByUsername(username) != null) {
+            request.setAttribute("errorMsg", "This username existed!");
+            request.getRequestDispatcher("register.jsp").forward(request, response);
         } else {
-            request.setAttribute("user", user);
-            request.setAttribute("flag", "old");
+            String password = request.getParameter("password");
+            String fullname = request.getParameter("fullname");
+            String email = request.getParameter("email");
+            String phoneNum = request.getParameter("phoneNum");
+            User o = new User(0, username, fullname, email, phoneNum, password, "user");
+            new UserDAO().insertUser(o);
+            request.setAttribute("user", o);
+            request.setAttribute("flag", "new");
             request.getRequestDispatcher("home.jsp").forward(request, response);
         }
     }
-    
-    
-    
 
 }
