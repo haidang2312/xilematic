@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Cal+Sans&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    height: 100vh;
+    background-color: white;
+}
+
+
+.header {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+
+.header>* {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header .logo img {
+    position: relative;
+    left: -200px;
+    width: 80px;
+}
+
+.header .search-bar input {
+    background-color: black;
+    border: none;
+    font-size: 1.5em;
+    padding: 5px 20px;
+    border-radius: 50px;
+    outline: none;
+    color: white;
+}
+
+.header .search-bar .submit-btn {
+    width: 30px;
+    aspect-ratio: 1 / 1;
+    cursor: pointer;
+    position: relative;
+    left: -40px;
+    background: none;
+    border: none;
+}
+
+
+
+
+.header .avatar img {
+    position: relative;
+    right: -150px;
+    width: 50px;
+    padding: 10px;
+    background-color: aquamarine;
+    border-radius: 50%;
+}
+
+.header .icon {
+    color: white;
+    font-size: 1.5em;
+}
+
+
+.main {
+    margin: 10px 0;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    gap: 10px;
+}
+
+.main {
+    margin: 10px;
+    text-align: center;
+}
+
+.main .nav {
+    background-color: rgba(178, 190, 195, 1.0);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.main .nav button {
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    border-radius: 20px;
+    padding: 10% 0;
+    width: 80%;
+    font-size: 1.25em;
+    font-weight: 500;
+    transition: .5s ease;
+    color: rgba(45, 52, 54, 1.0);
+}
+
+.main .nav button:hover {
+    transform: scale(1.1);
+    background-color: rgba(223, 230, 233, 1.0);
+    color: rgba(84, 160, 255, 1.0);
+    text-shadow: 1px 1px 8px rgba(187, 187, 187, 0.518);
+}
+
+.main .data {
+    padding: 5px;
+    border-radius: 20px;
+    background-color: rgba(178, 190, 195, 1.0);
+}
+
+.main .data .data-table {
+    font-size: 30px;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 5px 10px;
+    /* khoảng cách ngang 10px, dọc 5px */
+}
+
+.main .data .data-table td {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.75em;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.main .data .data-table td a {
+    text-decoration: none;
+    color: black;
+    font-style: italic;
+}
+
+.main .data .data-table tr>td:last-child a:hover {
+    color: rgba(0, 210, 211, 1.0);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.main .data .data-table .title {
+    background-color: rgba(235, 77, 75,1.0);
+}
+
+.main .data .data-table tr {
+    background-color: whitesmoke;
+}
+
+.main .data .data-table tr td {
+    padding: 10px;
+}
+
+.main .feature {
+    grid-column: 2 / 3;
+    display: flex;
+    gap: 25%;
+}
+
+.main .feature button {
+    cursor: pointer;
+    padding: 10px;
+    background-color: aquamarine;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.12em;
+    font-family: 'Poppins', sans-serif;
+    transition: .5s ease;
+}
+
+.main .feature button:hover {
+    transform: scale(1.1);
+    font-weight: 500;
+}
+
+.main .feature .add-new-btn {
+    background-color: rgba(126, 214, 223, 1.0);
+}
+
+.main .feature .navigate-btn {
+    width: 20%;
+    display: flex;
+    gap: 30px;
+}
+
+.main .feature .navigate-btn button {
+    flex: 1;
+}

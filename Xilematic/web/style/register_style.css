@@ -18,6 +18,12 @@ body {
     overflow: hidden;
 }
 
+input::-ms-reveal,
+input::-ms-clear {
+    display: none;
+}
+
+
 
 
 

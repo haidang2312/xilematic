@@ -12,7 +12,8 @@
 
     <body>
         <div class="login-box">
-            <form action="RegisterServlet" method="POST">
+            <form action="authenticate" method="POST">
+                <input type="hidden" name="sourcePage" value="register"/>
                 <h2>Register</h2>
                 <div class="input-box">
                     <span class="icon"><ion-icon name="person"></ion-icon></ion-icon></span>
