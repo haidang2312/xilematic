@@ -23,8 +23,6 @@ public class DBConnect {
             e.printStackTrace();
         }
     }
-    
-    
 
     public void closeConnection() {
         try {
@@ -36,10 +34,5 @@ public class DBConnect {
             System.out.println("Error closing connection: " + e.getMessage());
         }
     }
-    
-    public static void main(String[] args) {
-        new DBConnect();
-    }
-    
-    
+
 }
