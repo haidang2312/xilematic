@@ -13,7 +13,6 @@
     <body>
         <div class="login-box">
             <form action="authenticate" method="POST">
-                <input type="hidden" name="sourcePage" value="register"/>
                 <h2>Register</h2>
                 <div class="input-box">
                     <span class="icon"><ion-icon name="person"></ion-icon></ion-icon></span>
@@ -46,11 +45,9 @@
                     <label>PhoneNumber</label>
                 </div>
 
-                <div class="error-message">${requestScope.errorMsg}</div>
+                <div class="error-message">${requestScope.msg}</div>
 
-                <div class="submit-btn"><button type="submit">Register</button></div>
-
-
+                <div class="submit-btn"><button type="submit" name="action" value="register">Register</button></div>
             </form>
             <script>
                 const passwordInput = document.getElementById('password');

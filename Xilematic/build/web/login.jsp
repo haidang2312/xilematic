@@ -1,5 +1,6 @@
 <%-- Document : login Created on : May 18, 2025, 1:27:57 AM Author : ADMIN --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
@@ -16,11 +17,17 @@
     <body>
         <div class="login-box">
             <form action="authenticate" method="POST">
-                <input type="hidden" name="sourcePage" value="login"/>
                 <h2>Login</h2>
                 <div class="input-box">
                     <span class="icon"><ion-icon name="person"></ion-icon></ion-icon></span>
-                    <input type="text" required name="username">
+                            <c:choose>
+                                <c:when test="${not empty cookie.USERNAME}">
+                            <input type="text" required name="username" value="${cookie.USERNAME.value}">
+                        </c:when>
+                        <c:otherwise>
+                            <input type="text" required name="username">
+                        </c:otherwise>
+                    </c:choose>
                     <label>Username</p></label>
                 </div>
 
@@ -34,11 +41,21 @@
                 <div class="error-message">${requestScope.errorMsg}</div>
 
                 <div class="remember-forgot">
-                    <label><input type="checkbox">Remember me</label>
+                    <label>
+                        <c:choose>
+                            <c:when test="${not empty cookie.USERNAME}">
+                                <input type="checkbox" name="rememberMe" checked="">
+                            </c:when>
+                            <c:otherwise>
+                                <input type="checkbox" name="rememberMe">
+                            </c:otherwise>
+                        </c:choose>
+                        Remember me
+                    </label>
                     <a href="forgot_password.jsp">Forgot Password?</a>
                 </div>
 
-                <button type="submit">Login</button>
+                <button type="submit" name="action" value="login">Login</button>
 
                 <div class="login-with">
                     <a href=""><img

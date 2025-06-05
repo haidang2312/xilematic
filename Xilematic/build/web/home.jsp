@@ -13,6 +13,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>${requestScope.flag == "old" ? "Welcome back" : "Welcome"}, ${requestScope.user.getFullname()}</h1>
+        <h1>WELCOME TO HOME.JSP</h1>
     </body>
 </html>

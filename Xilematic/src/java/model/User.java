@@ -31,6 +31,15 @@ public class User {
         this.typeOfUser = typeOfUser;
     }
 
+    public User(String username, String fullname, String email, String phoneNumber, String password, String typeOfUser) {
+        this.username = username;
+        this.fullname = fullname;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.password = password;
+        this.typeOfUser = typeOfUser;
+    }
+
     public int getId() {
         return id;
     }
