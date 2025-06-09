@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://ionic.io/ionicons" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <div class="detail">
+      <div class="detail-content">
+        <div class="detail-banner">
+          <img
+            src="https://iguov8nhvyobj.vcdn.cloud/media/catalog/product/cache/1/image/1800x/71252117777b696995f01934522c402d/t/t/ttk_poster_official_fa_1638x2048px_1_.jpg"
+            alt=""
+          />
+        </div>
+        <div class="detail-information">
+          <h2>Thám tử Kiên: Kỳ Án Không Đầu</h2>
+          <p class="movie-desc">
+            Thám tử Kiên là dấu ấn mới từ đạo diễn Việt kiều, với màu sắc trinh
+            thám pha kinh dị - dòng phim từng giúp anh tạo tiếng vang. Sức hút
+            của phim trước tiên nằm ở khâu kịch bản chắc tay, do Victor Vũ nhào
+            nặn cùng biên kịch Đức Nguyễn.
+          </p>
+          <p class="movice-director">Director: <span>Victor Vũ</span></p>
+          <p class="movie-actors">
+            Main actor: Quốc Huy, Đinh Ngọc Diệp, Quốc Anh, Anh Phạm, Minh Anh
+          </p>
+          <p class="movie-rating">Rating: <span>10/10</span></p>
+          <p class="movie-timeline">Timeline: <span>20.20.2020</span></p>
+          <p class="movie-status">Status: <span>Showing</span></p>
+          <div class="btn-detail">
+            <button>
+              Trailer<span
+                ><ion-icon name="caret-forward-circle-outline"></ion-icon
+              ></span>
+            </button>
+            <button>Booking</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="comment-form">
+      <h3>Viết bình luận</h3>
+      <textarea
+        id="comment-input"
+        placeholder="Nhập bình luận..."
+        rows="3"
+        style="width: 100%"
+      ></textarea>
+      <button onclick="addComment()">Gửi bình luận</button>
+    </div>
+
+    <div id="comments-container">
+      <!-- Comment mới sẽ được thêm vào đây -->
+    </div>
+
+    <button id="toggle-comments" onclick="toggleCommentSection()">Ẩn bình luận</button>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="detail.js"></script>
+  </body>
+</html>

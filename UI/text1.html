@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Carousel Vòng Tròn Mượt</title>
+  <style>
+    body {
+      background-color: #121212;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    .carousel-container {
+      width: 100%;
+      max-width: 900px;
+      margin: auto;
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .carousel {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel img {
+      width: 300px;
+      height: auto;
+      flex-shrink: 0;
+      border-radius: 10px;
+      filter: brightness(0.8);
+      transition: filter 0.5s ease;
+    }
+
+    .carousel img.active {
+      filter: brightness(1);
+      transform: scale(1.05);
+    }
+
+    .btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 2;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background: rgba(0, 0, 0, 0.9);
+    }
+
+    .btn.left {
+      left: 10px;
+    }
+
+    .btn.right {
+      right: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="carousel-container">
+  <button class="btn left" onclick="moveSlide(-1)">&#10094;</button>
+  <div class="carousel" id="carousel">
+    <!-- Clone cuối -->
+    <img src="https://via.placeholder.com/300x400?text=Phim+4" alt="Clone Phim 4">
+    
+    <!-- Ảnh thật -->
+    <img src="https://via.placeholder.com/300x400?text=Phim+1" alt="Phim 1" class="active">
+    <img src="https://via.placeholder.com/300x400?text=Phim+2" alt="Phim 2">
+    <img src="https://via.placeholder.com/300x400?text=Phim+3" alt="Phim 3">
+    <img src="https://via.placeholder.com/300x400?text=Phim+4" alt="Phim 4">
+
+    <!-- Clone đầu -->
+    <img src="https://via.placeholder.com/300x400?text=Phim+1" alt="Clone Phim 1">
+  </div>
+  <button class="btn right" onclick="moveSlide(1)">&#10095;</button>
+</div>
+
+<script>
+  const carousel = document.getElementById('carousel');
+  const slides = carousel.children;
+  const totalSlides = slides.length;
+  const slideWidth = slides[0].clientWidth;
+
+  let currentIndex = 1; // vì clone đầu ở vị trí 0
+  carousel.style.transform = `translateX(${-slideWidth * currentIndex}px)`;
+
+  function moveSlide(direction) {
+    if (carousel.style.transition === '') {
+      carousel.style.transition = 'transform 0.5s ease-in-out';
+    }
+
+    // Remove active class from current image
+    slides[currentIndex].classList.remove('active');
+
+    currentIndex += direction;
+    carousel.style.transform = `translateX(${-slideWidth * currentIndex}px)`;
+
+    // Đợi animation chạy xong
+    setTimeout(() => {
+      if (currentIndex === totalSlides - 1) {
+        // Nếu tới clone đầu → nhảy về ảnh thật đầu
+        carousel.style.transition = 'none';
+        currentIndex = 1;
+        carousel.style.transform = `translateX(${-slideWidth * currentIndex}px)`;
+      } else if (currentIndex === 0) {
+        // Nếu tới clone cuối → nhảy về ảnh thật cuối
+        carousel.style.transition = 'none';
+        currentIndex = totalSlides - 2;
+        carousel.style.transform = `translateX(${-slideWidth * currentIndex}px)`;
+      }
+
+      // Add active class to new current image
+      slides[currentIndex].classList.add('active');
+    }, 500); // khớp với thời gian transition
+  }
+</script>
+
+</body>
+</html>

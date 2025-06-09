@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Carousel Vòng Tròn Mượt</title>
+  <style>
+    .carousel-container {
+      width: 100%;
+      max-width: 900px;
+      margin: auto;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .carousel {
+      display: flex;
+      transition: transform 0.4s ease-in-out;
+    }
+
+    .carousel img {
+      width: 300px;
+      height: auto;
+      flex-shrink: 0;
+    }
+
+    .btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.5);
+      color: rgb(230, 89, 89);
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    .btn.left {
+      left: 0;
+    }
+
+    .btn.right {
+      right: 0;
+    }
+  </style>
+</head>
+<body>
+
+<div class="carousel-container">
+  <button class="btn left" onclick="moveSlide(-1)">&#10094;</button>
+  <div class="carousel" id="carousel">
+    <!-- Clone cuối -->
+    <img src="https://via.placeholder.com/300x400?text=Phim+4" alt="Clone Phim 4">
+    
+    <!-- Ảnh thật -->
+    <img src="https://via.placeholder.com/300x400?text=Phim+1" alt="Phim 1">
+    <img src="https://via.placeholder.com/300x400?text=Phim+2" alt="Phim 2">
+    <img src="https://via.placeholder.com/300x400?text=Phim+3" alt="Phim 3">
+    <img src="https://via.placeholder.com/300x400?text=Phim+4" alt="Phim 4">
+
+    <!-- Clone đầu -->
+    <img src="https://via.placeholder.com/300x400?text=Phim+1" alt="Clone Phim 1">
+  </div>
+  <button class="btn right" onclick="moveSlide(1)">&#10095;</button>
+</div>
+
+<script>
+  const carousel = document.getElementById('carousel');
+  const slides = carousel.children;
+  const totalSlides = slides.length;
+  const slideWidth = slides[0].clientWidth;
+
+  let currentIndex = 1; // vì clone đầu ở vị trí 0
+  carousel.style.transform = `translateX(${-slideWidth * currentIndex}px)`;
+
+  function moveSlide(direction) {
+    if (carousel.style.transition === '') {
+      carousel.style.transition = 'transform 0.4s ease-in-out';
+    }
+
+    currentIndex += direction;
+    carousel.style.transform = `translateX(${-slideWidth * currentIndex}px)`;
+
+    // Đợi animation chạy xong
+    setTimeout(() => {
+      if (currentIndex === totalSlides - 1) {
+        // Nếu tới clone đầu → nhảy về ảnh thật đầu
+        carousel.style.transition = 'none';
+        currentIndex = 1;
+        carousel.style.transform = `translateX(${-slideWidth * currentIndex}px)`;
+      } else if (currentIndex === 0) {
+        // Nếu tới clone cuối → nhảy về ảnh thật cuối
+        carousel.style.transition = 'none';
+        currentIndex = totalSlides - 2;
+        carousel.style.transform = `translateX(${-slideWidth * currentIndex}px)`;
+      }
+    }, 400); // khớp với thời gian transition
+  }
+</script>
+
+</body>
+</html>
