@@ -68,7 +68,7 @@ public class MovieDAO implements IMovieDAO {
             ps.setBoolean(7, movie.isHot());
             ps.setBoolean(8, movie.isStatus());
             ps.setBoolean(9, !movie.isStatus());
-            ps.setString(10, movie.getMainCharacter());
+            ps.setString(10, movie.getActor());
             ps.setString(11, movie.getDirector());
             ps.executeUpdate();
         } catch (Exception e) {
@@ -156,7 +156,7 @@ public class MovieDAO implements IMovieDAO {
             ps.setBoolean(7, movie.isHot());
             ps.setBoolean(8, movie.isStatus());
             ps.setBoolean(9, !movie.isStatus());
-            ps.setString(10, movie.getMainCharacter());
+            ps.setString(10, movie.getActor());
             ps.setString(11, movie.getDirector());
             ps.setInt(12, movie.getId());
             return ps.executeUpdate() > 0;

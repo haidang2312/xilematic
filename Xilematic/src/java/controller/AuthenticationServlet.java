@@ -66,10 +66,11 @@ public class AuthenticationServlet extends HttpServlet {
             session.setAttribute("user_session", user);
             String[] namePart = user.getFullname().split(" ");
             String name = namePart[namePart.length - 1];
-            request.setAttribute("alias", name);
+            session.setAttribute("alias", name);
             if (user.getTypeOfUser().equals("dev")) {
-                response.sendRedirect("paging?type=users");
-//                request.getRequestDispatcher(PageLink.ADMIN_PAGE).forward(request, response);
+                request.setAttribute("type", "stats");
+                request.setAttribute("status", true);
+                request.getRequestDispatcher(PageLink.ADMIN_PAGE).forward(request, response);
             } else {
                 request.getRequestDispatcher(PageLink.HOME_PAGE).forward(request, response);
             }

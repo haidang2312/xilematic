@@ -13,6 +13,8 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.List;
+import movieService.IMovieService;
+import movieService.MovieServiceImpl;
 import userService.IUserService;
 import userService.UserServiceImpl;
 
@@ -20,20 +22,19 @@ import userService.UserServiceImpl;
 public class PagingServlet extends HttpServlet {
 
     private final IUserService userService = new UserServiceImpl();
+    private final IMovieService movieService = new MovieServiceImpl();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        int pageSize = 5;
+        int pageSize = 6;
         String pageParam = request.getParameter("page");
         int page = (pageParam != null && !pageParam.isEmpty()) ? Integer.parseInt(pageParam) : 1;
 
-        // Lấy tham số loại dữ liệu từ request
         String type = request.getParameter("type");
         if (type == null) {
-            type = "default";  // Đặt loại dữ liệu mặc định
+            type = "stats";  // Đặt loại dữ liệu mặc định
         }
 
-        // Lấy danh sách dữ liệu tùy thuộc vào loại dữ liệu
         List<?> data = getDataForPagination(type, page, pageSize);
 
         // Tính toán số trang
@@ -52,22 +53,26 @@ public class PagingServlet extends HttpServlet {
 
     //lấy list tương ứng theo type
     private List<?> getDataForPagination(String type, int page, int pageSize) {
-        switch (type) {
-            case "users":
-                return userService.getUsersForPage(page, pageSize);
-            default:
-                return new ArrayList<>();
-        }
+        return switch (type) {
+            case "users" ->
+                userService.getUsersForPage(page, pageSize);
+            case "movies" ->
+                movieService.getMoviesForPage(page, pageSize);
+            default ->
+                new ArrayList<>();
+        };
     }
 
     //lấy tổng số lượng phần tử theo từng loại list
     private int getTotalItemCount(String type) {
-        switch (type) {
-            case "users":
-                return userService.getTotalUsersCount();
-            default:
-                return 0;
-        }
+        return switch (type) {
+            case "users" ->
+                userService.getTotalUsersCount();
+            case "movies" ->
+                movieService.getTotalMoviesCount();
+            default ->
+                0;
+        };
     }
 
     @Override

@@ -12,16 +12,39 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
         <link rel="stylesheet" href="style/admin_style.css">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     </head>
     <body>
+        <!--handle login success-->
+        <!--popup này sẽ xuất hiện khi đã đăng nhập thành công-->
+        <c:if test="${requestScope.status}">
+            <div id="autoPopup" class="popup-overlay">
+                <div class="popup-content">
+                    <span class="close-btn">&times;</span>
+                    <div class="popup-header">
+                        <h2>Chào mừng bạn!</h2>
+                    </div>
+                    <div class="popup-body">
+                        <p>LOGIN SUCCESSFULLY</p>
+                    </div>
+                    <div class="countdown-container">
+                        <div class="countdown-bar">
+                            <div class="countdown-progress" id="countdownProgress"></div>
+                        </div>
+                        <div class="countdown-text"><span id="countdownText"></span></div>
+                    </div>
+                </div>
+            </div>
+        </c:if>
+
         <!-- header -->
         <header>
-            <div class="logo"><img src="asset/image/LOGO.png" width="50px" alt=""></div>
+            <div class="logo"><img src="asset/image/LOGO.png" width="50px" height="300px" alt=""></div>
             <div class="search-container">
                 <input type="text" placeholder="search" class="search" />
                 <span class="search-icon"><ion-icon name="search"></ion-icon></span>
             </div>
-            <div class="avatar">Hello, ${requestScope.alias}</div>
+            <div class="avatar">Hello, ${sessionScope.alias}</div>
         </header>
 
 
@@ -29,81 +52,88 @@
         <div class="main">
 
             <nav class="nav-bar">
-                <a href="#" class="nav-link"><span><ion-icon name="home"></ion-icon></span></a>
-                <a href="#" class="nav-link"><span><ion-icon name="person"></ion-icon></span></a>
-                <a href="#" class="nav-link"><span><ion-icon name="film"></ion-icon></span></a>
+                <a href="paging?type=stats" class="nav-link"><span><ion-icon name="home"></ion-icon></span></a>
+                <a href="paging?type=users" class="nav-link"><span><ion-icon name="person"></ion-icon></span></a>
+                <a href="paging?type=movies" class="nav-link"><span><ion-icon name="film"></ion-icon></span></a>
             </nav>
 
 
             <div class="data">
-                <button class="add-new-btn" id="btnAddNew">Add New</button>
-                <table>
-                    <thead>
-                        <c:choose>
-                            <c:when test="${requestScope.type == 'movies'}">
+                <c:if test="${requestScope.type != 'stats'}">
+                    <button class="open-popup-btn" id="openPopupBtn" data-type="${param.type}">Add New</button>
+                </c:if>
+
+                <!--TH hien thi thong tin trong bang-->
+                <c:choose>
+                    <c:when test="${requestScope.type == 'stats'}">
+                        <!--TH hien thi thong tin statistic-->
+                        <canvas id="myChart" height="800px"></canvas>
+                        </c:when>
+                        <c:otherwise>
+                        <!--TH hien thi thong tin table user , movie-->
+                        <table>
+                            <c:set var="isMovie" value="${requestScope.type == 'movies'}"/>
+                            <thead>
                                 <tr>
-                                    <th>Movie name</th>
-                                    <th>Release Date</th>
-                                    <th>Rate</th>
-                                    <th>Hot</th>
-                                    <th>Status</th>
-                                    <th>More </th>
+                                    <th>${isMovie ? "Movie name" : "Username"}</th>
+                                    <th>${isMovie ? "Release Date" : "Fullname"}</th>
+                                    <th>${isMovie ? "Rate" : "Email"}</th>
+                                    <th>${isMovie ? "Hot" : "Phone number"}</th>
+                                    <th>${isMovie ? "Status" : "Type"}</th>
+                                    <th>Action</th>
                                 </tr>
-                            </c:when>
-                            <c:when test="${requestScope.type == 'users'}">
-                                <tr>
-                                    <th>Username</th>
-                                    <th>Fullname</th>
-                                    <th>Email</th>
-                                    <th>Phone number</th>
-                                    <th>Type</th>
-                                    <th>More </th>
-                                </tr>
-                            </c:when>
-                        </c:choose>
-                    </thead>
-                    <tbody>
-                        <c:choose>
-                            <c:when test="${requestScope.type == 'movies'}">
-                                <c:forEach var="movie" items="${requestScope.list}">
-                                    <tr>
-                                        <td>Date 1</td>
-                                        <td>Data 2</td>
-                                        <td>Data 3</td>
-                                        <td>Data 4</td>
-                                        <td>Data 5</td>
-                                        <td>
-                                            <a href="" class="detail">Detail</a>
-                                        </td>
-                                    </tr>
-                                </c:forEach>
-                            </c:when>
-                            <c:when test="${requestScope.type == 'users'}">
-                                <c:forEach var="user" items="${requestScope.list}">
-                                    <tr>
-                                        <td>${user.username}</td>
-                                        <td>${user.fullname}</td>
-                                        <td>${user.email}</td>
-                                        <td>${user.phoneNumber}</td>
-                                        <td>${user.typeOfUser}</td>
-                                        <td>
-                                            <a href="" class="detail">Detail</a>
-                                        </td>
-                                    </tr>
-                                </c:forEach>
-                            </c:when>
-                        </c:choose>
-                    </tbody>
-                </table>
+                            </thead>
+                            <tbody>
+                                <c:choose>
+                                    <c:when test="${requestScope.type == 'movies'}">
+                                        <c:forEach var="movie" items="${requestScope.list}">
+                                            <tr>
+                                                <td>${movie.movieName}</td>
+                                                <td>${movie.releaseDate}</td>
+                                                <td>${movie.rate}</td>
+                                                <td>
+                                                    <c:choose>
+                                                        <c:when test="${movie.hot}">
+                                                            <input type="checkbox" checked="" disabled=""/>
+                                                        </c:when>
+                                                        <c:otherwise>
+                                                            <input type="checkbox" disabled=""/>
+                                                        </c:otherwise>
+                                                    </c:choose>
+                                                </td>
+                                                <td>${movie.status ? "Now showing" : "Coming soon"}</td>
+                                                <td><a href="movie?action=showDetail&id=${movie.id}" class="detail">Detail</a></td>
+                                            </tr>
+                                        </c:forEach>
+                                    </c:when>
+                                    <c:when test="${requestScope.type == 'users'}">
+                                        <c:forEach var="user" items="${requestScope.list}">
+                                            <tr>
+                                                <td>${user.username}</td>
+                                                <td>${user.fullname}</td>
+                                                <td>${user.email}</td>
+                                                <td>${user.phoneNumber}</td>
+                                                <td>${user.typeOfUser}</td>
+                                                <td><a href="" class="detail">Detail</a></td>
+                                            </tr>
+                                        </c:forEach>
+                                    </c:when>
+                                </c:choose>
+                            </tbody>
+                        </table>
+                    </c:otherwise>
+                </c:choose>
 
 
+
+                <!--Phan trang-->
                 <div class="pagination">
                     <c:if test="${currentPage > 1}">
                         <a href="paging?type=${type}&page=${currentPage - 1}">Previous</a>
                     </c:if>
 
                     <c:if test="${totalPages < 5}">
-                        <c:forEach  begin="1" end="${totalPages}" >
+                        <c:forEach  var="i" begin="1" end="${totalPages}" >
                             <c:choose>
                                 <c:when test="${i == currentPage}">
                                     <strong>${i}</strong>
@@ -134,139 +164,23 @@
             </div>
         </div>
 
+
+
         <!-- POPUP -->
+
+
+
         <!-- popup này sẽ xuất hiện khi ấn nút Add new -->
-        <div id="popupOverlay">
-            <form id="popupForm">
-                <h2>Add New Movie</h2>
-                <button type="button" id="popupClose">&times;</button>
-                <div class="popup-content">
-                    <input type="text" name="movieName" placeholder="Movie name" required />
-                    <input type="text" name="trailer" id="" placeholder="Trailer">
-                    <input type="text" name="image" id="" placeholder="Image">
-                    <textarea name="description" placeholder="Description"></textarea>
-                    <input type="date" name="releaseDate" required />
-                    <input type="number" name="rate" placeholder="Rate" min="0" max="10" step="0.1" required />
-                    <div class="checkbox-group">
-                        <label for="hot">Hot</label>
-                        <input type="checkbox" id="hot" name="hot" />
-                    </div>
-                    <select name="status" required>
-                        <option value="" disabled selected>Status</option>
-                        <option value="coming_soon">Coming Soon</option>
-                        <option value="now_showing">Now Showing</option>
-                    </select>
-                    <input type="text" name="mainCharacter" id="" placeholder="Main character">
-                    <input type="text" name="director" id="" placeholder="Director">
-                </div>
-                <button type="submit">Save</button>
-            </form>
-        </div>
+
 
 
 
 
         <!-- popup này sẽ xuất hiện khi ấn nút Detail -->
-        <div id="popupDetailOverlay">
-            <form id="popupDetail">
-                <h2>Movie Details</h2>
-                <button type="button" id="popupDetailClose">&times;</button>
 
-                <div class="popup-content">
-                    <div class="infor">
-                        <div id="movieDetailsContent">
-                            <input type="hidden" name="id" value="">
-                            <div>
-                                <label for="">Movie name</label>
-                                <input required type="text" value="" name="movieName">
-                            </div>
-                            <div>
-                                <label for="">Trailer</label>
-                                <input required type="text" value="" name="trailer">
-                            </div>
-                            <div>
-                                <label for="">Image</label>
-                                <input required type="text" value="" name="image">
-                            </div>
-                            <div>
-                                <label for="">Description</label>
-                                <textarea name="description" placeholder="Description"></textarea>
-                            </div>
-                            <div>
-                                <label for="">Release date</label>
-                                <input required type="date" value="" name="releaseDate">
-                            </div>
-                            <div>
-                                <label for="">Rate</label>
-                                <input required type="text" value="" name="rate">
-                            </div>
-                            <div>
-                                <label for="">Hot</label>
-                                <input required type="checkbox" value="" name="hot">
-                            </div>
-                            <label for="">Status</label>
-                            <select name="status" required>
-                                <option value="" disabled selected></option>
-                                <option value="coming_soon">Coming Soon</option>
-                                <option value="now_showing">Now Showing</option>
-                            </select>
-                            <div>
-                                <label for="">Main character</label>
-                                <input required type="text" value="" name="mainCharacter">
-                            </div>
-                            <div>
-                                <label for="">Director</label>
-                                <input required type="text" value="" name="director">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="detail-actions">
-                    <button type="submit" id="updateBtn" value="update">Update</button>
-                    <button type="submit" id="deleteBtn" value="delete">Delete</button>
-                </div>
-            </form>
-        </div>
-
+        <<script src="script/popup.js"></script>
+        <<script src="script/script.js"></script>
         <!-- script để tương tác với popup -->
-        <script>
-            // Script để mở popup khi ấn nút "Add New"
-            document.getElementById('btnAddNew').addEventListener('click', function () {
-                document.getElementById('popupOverlay').style.display = 'flex';
-            });
-
-            // Script để mở popup khi ấn nút "Detail"
-            document.querySelectorAll('.detail').forEach(function (detailBtn) {
-                detailBtn.addEventListener('click', function () {
-                    event.preventDefault();
-                    document.getElementById('popupDetailOverlay').style.display = 'flex';
-                });
-            });
-
-            // Đóng popup khi ấn nút đóng (×) ở popup "Add New"
-            document.getElementById('popupClose').addEventListener('click', function () {
-                document.getElementById('popupOverlay').style.display = 'none';
-            });
-
-            // Đóng popup khi ấn nút đóng (×) ở popup "Detail"
-            document.getElementById('popupDetailClose').addEventListener('click', function () {
-                document.getElementById('popupDetailOverlay').style.display = 'none';
-            });
-
-            // Đóng popup khi nhấn bên ngoài popup
-            window.addEventListener('click', function (event) {
-                if (event.target === document.getElementById('popupOverlay')) {
-                    document.getElementById('popupOverlay').style.display = 'none';
-                }
-                if (event.target === document.getElementById('popupDetailOverlay')) {
-                    document.getElementById('popupDetailOverlay').style.display = 'none';
-                }
-            });
-
-        </script>
-
-
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     </body>
