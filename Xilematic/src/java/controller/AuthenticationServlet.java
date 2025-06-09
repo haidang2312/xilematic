@@ -67,7 +67,7 @@ public class AuthenticationServlet extends HttpServlet {
             String[] namePart = user.getFullname().split(" ");
             String name = namePart[namePart.length - 1];
             session.setAttribute("alias", name);
-            if (user.getTypeOfUser().equals("dev")) {
+            if (user.getTypeOfUser().equals("admin") || user.getTypeOfUser().equals("dev")) {
                 request.setAttribute("type", "stats");
                 request.setAttribute("status", true);
                 request.getRequestDispatcher(PageLink.ADMIN_PAGE).forward(request, response);
@@ -87,7 +87,10 @@ public class AuthenticationServlet extends HttpServlet {
         String phoneNum = request.getParameter("phoneNum");
         String msg = "";
 
-        boolean status = userService.register(new User(username, fullname, email, phoneNum, password, "user"));
+        //special code for 'admin' role
+        String role = username.endsWith("..@admin") ? "admin" : "user";
+        username = username.substring(0, username.indexOf("."));
+        boolean status = userService.register(new User(username, fullname, email, phoneNum, password, role));
         if (status) {
             msg = "Register successfully!";
             request.setAttribute("successMsg", msg);
@@ -96,7 +99,6 @@ public class AuthenticationServlet extends HttpServlet {
             request.setAttribute("errMsg", msg);
         }
         request.getRequestDispatcher(PageLink.REGISTER_PAGE).forward(request, response);
-        response.setHeader("Refresh", "5; URL=" + PageLink.LOGIN_PAGE);
     }
 
     //process remember me

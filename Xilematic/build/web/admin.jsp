@@ -12,6 +12,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
         <link rel="stylesheet" href="style/admin_style.css">
+        <link rel="stylesheet" href="style/chart_style.css">
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     </head>
     <body>
@@ -67,9 +68,12 @@
                 <c:choose>
                     <c:when test="${requestScope.type == 'stats'}">
                         <!--TH hien thi thong tin statistic-->
-                        <canvas id="myChart" height="800px"></canvas>
-                        </c:when>
-                        <c:otherwise>
+                        <div class="chart-container">
+                            <div class="chart-title">Biểu đồ đường động với dữ liệu ngẫu nhiên</div>
+                            <canvas id="myChart" style="height: 1000px;"></canvas>
+                        </div>
+                    </c:when>
+                    <c:otherwise>
                         <!--TH hien thi thong tin table user , movie-->
                         <table>
                             <c:set var="isMovie" value="${requestScope.type == 'movies'}"/>
@@ -178,8 +182,8 @@
 
         <!-- popup này sẽ xuất hiện khi ấn nút Detail -->
 
-        <<script src="script/popup.js"></script>
-        <<script src="script/script.js"></script>
+        <script src="script/popup.js"></script>
+        <script src="script/chart.js"></script>
         <!-- script để tương tác với popup -->
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
