@@ -45,7 +45,8 @@
                     <label>PhoneNumber</label>
                 </div>
 
-                <div class="error-message">${requestScope.msg}</div>
+                <div class="error-message">${requestScope.w}</div>
+                <div class="success-message">${requestScope.successMsg}</div>
 
                 <div class="submit-btn"><button type="submit" name="action" value="register">Register</button></div>
             </form>

@@ -88,9 +88,15 @@ public class AuthenticationServlet extends HttpServlet {
         String msg = "";
 
         boolean status = userService.register(new User(username, fullname, email, phoneNum, password, "user"));
-        msg = status ? "Register successfully!" : "This username existed!";
-        request.setAttribute("msg", msg);
+        if (status) {
+            msg = "Register successfully!";
+            request.setAttribute("successMsg", msg);
+        } else {
+            msg = "This username existed!";
+            request.setAttribute("errMsg", msg);
+        }
         request.getRequestDispatcher(PageLink.REGISTER_PAGE).forward(request, response);
+        response.setHeader("Refresh", "5; URL=" + PageLink.LOGIN_PAGE);
     }
 
     //process remember me

@@ -54,6 +54,13 @@ h2 {
     top: -25px;
 }
 
+.success-message{
+    width: 100%;
+    color: greenyellow;
+    position: relative;
+    top: -25px;
+}
+
 .input-box {
     position: relative;
     width: 420px;
