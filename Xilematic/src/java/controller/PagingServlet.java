@@ -13,10 +13,10 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.List;
-import movieService.IMovieService;
-import movieService.MovieServiceImpl;
-import userService.IUserService;
-import userService.UserServiceImpl;
+import service.IMovieService;
+import service.MovieServiceImpl;
+import service.IUserService;
+import service.UserServiceImpl;
 
 @WebServlet(name = "PagingController", urlPatterns = {"/paging"})
 public class PagingServlet extends HttpServlet {

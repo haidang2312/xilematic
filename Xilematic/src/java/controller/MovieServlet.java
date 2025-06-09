@@ -11,8 +11,8 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import model.Movie;
-import movieService.IMovieService;
-import movieService.MovieServiceImpl;
+import service.IMovieService;
+import service.MovieServiceImpl;
 
 @WebServlet(name = "MovieServlet", urlPatterns = {"/movies"})
 public class MovieServlet extends HttpServlet {

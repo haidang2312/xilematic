@@ -14,8 +14,8 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import model.User;
-import userService.IUserService;
-import userService.UserServiceImpl;
+import service.IUserService;
+import service.UserServiceImpl;
 
 @WebServlet(name = "AuthenticateServlet", urlPatterns = {"/authenticate"})
 public class AuthenticationServlet extends HttpServlet {
