@@ -4,6 +4,7 @@
  */
 package service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import model.Movie;
 
@@ -27,4 +28,5 @@ public interface IMovieService {
 
     public int getTotalMoviesCount();
 
+    public String getMovieShowtimeByCinema(int ma_rap, int ma_phim);
 }

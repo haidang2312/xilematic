@@ -1,65 +1,78 @@
-function openModal() {
-  const modal = document.getElementById("videoModal");
-  const iframe = modal.querySelector("iframe");
-  iframe.src = iframe.dataset.src;
-  modal.style.display = "block";
-}
-
-function closeModal() {
-  const modal = document.getElementById("videoModal");
-  const iframe = modal.querySelector("iframe");
-  modal.style.display = "none";
-  iframe.src = "";
-}
-
-document.querySelectorAll(".seat").forEach((seat) => {
-  seat.addEventListener("click", () => {
-    seat.classList.toggle("selecting-seat");
-  });
-});
-
 let selectedSeats = [];
 let totalPrice = 0;
-function selectSeat(seat, price) {
-  const seatIndex = selectedSeats.indexOf(seat);
-  if (seatIndex === -1) {
-    selectedSeats.push(seat);
-    totalPrice += price;
-  } else {
-    selectedSeats.splice(seatIndex, 1);
-    totalPrice -= price;
-  }
-  updateTicketInfo();
+
+function selectSeat(seatId, price) {
+    const seatElement = event.target;
+    const seatIndex = selectedSeats.findIndex(seat => seat.id === seatId);
+
+    if (seatElement.classList.contains('selected-seat')) {
+        return;
+    }
+
+    if (seatIndex === -1) {
+        selectedSeats.push({id: seatId, price: price});
+        seatElement.classList.add('selecting-seat');
+    } else {
+        selectedSeats.splice(seatIndex, 1);
+        seatElement.classList.remove('selecting-seat');
+    }
+
+    updateTicketInfo();
 }
+
 function updateTicketInfo() {
-  const seatsDisplay =
-    selectedSeats.length > 0 ? selectedSeats.join(", ") : "None";
-  document.getElementById("selected-seats").innerText =
-    "Seats: " + seatsDisplay;
-  document.getElementById("total-price").innerText =
-    "Total Price: " + totalPrice + " VND";
-  const warningMessage = document.getElementById("warning");
-  if (selectedSeats.length === 0) {
-    warningMessage.style.display = "block";
-  } else {
-    warningMessage.style.display = "none";
-  }
-  document.getElementById("total-price").innerText =
-    "Total Price: " + totalPrice + " VND";
+    totalPrice = selectedSeats.reduce((sum, seat) => sum + seat.price, 0);
+
+    const seatsElement = document.getElementById('selected-seats');
+    const priceElement = document.getElementById('total-price');
+    const warningElement = document.getElementById('warning');
+
+    if (selectedSeats.length > 0) {
+        seatsElement.innerHTML = `Selected Seats: <span>${selectedSeats.map(seat => seat.id).join(', ')}</span>`;
+        priceElement.innerHTML = `Total Price: <span>${totalPrice.toLocaleString()} VND</span>`;
+        warningElement.style.display = 'none';
+    } else {
+        seatsElement.innerHTML = 'Selected Seats: <span>None</span>';
+        priceElement.innerHTML = 'Total Price: <span>0 VND</span>';
+        warningElement.style.display = 'block';
+    }
 }
 
 function submitBooking() {
-  const warningMessage = document.getElementById("warning");
-  if (selectedSeats.length === 0) {
-    warningMessage.style.display = "block";
-  } else {
-    warningMessage.style.display = "none";
-    alert(
-      "Booking confirmed for seats: " +
-        selectedSeats.join(", ") +
-        " with total price: " +
-        totalPrice +
-        " VND"
-    );
-  }
+    if (selectedSeats.length === 0) {
+        document.getElementById('warning').style.display = 'block';
+        return;
+    }
+
+    document.getElementById('f-seats').value = selectedSeats.map(seat => seat.id).join(',');
+    document.getElementById('f-totalPrice').value = totalPrice;
+    console.log(totalPrice);
+    document.getElementById('bookingForm').submit();
 }
+
+function openModal() {
+    const modal = document.getElementById('videoModal');
+    const iframe = modal.querySelector('iframe');
+    iframe.src = iframe.dataset.src;
+    modal.classList.add('show');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+    const modal = document.getElementById('videoModal');
+    const iframe = modal.querySelector('iframe');
+    iframe.src = '';
+    modal.classList.remove('show');
+    document.body.style.overflow = '';
+}
+
+window.onclick = function (event) {
+    const modal = document.getElementById('videoModal');
+    if (event.target === modal) {
+        closeModal();
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    updateTicketInfo();
+});

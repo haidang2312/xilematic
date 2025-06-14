@@ -5,11 +5,15 @@
 package dao;
 
 import context.DBConnection;
+import java.security.Timestamp;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import model.Movie;
 
@@ -54,6 +58,10 @@ public class MovieDAO implements IMovieDAO {
     private final String SEARCH_MOVIE_BY_NAME = "SELECT * FROM Phim WHERE ten_phim LIKE";
     private static final String PAGING_MOVIE = "SELECT * FROM Phim ORDER BY ma_phim OFFSET ? ROWS FETCH NEXT ? ROWS ONLY";
     private static final String GET_TOTAL_OF_MOVIE = "SELECT COUNT(*) FROM Phim";
+    private static final String SELECT_MOVIE_SHOWTIME_BY_CINEMA = "SELECT ngay_gio_chieu FROM LichChieu l\n"
+            + "JOIN Phim p ON l.ma_phim = p.ma_phim\n"
+            + "JOIN RapPhim r on r.ma_rap = l.ma_rap\n"
+            + "WHERE p.ma_phim = ? and r.ma_rap = ?";
 
     @Override
     public void insertMovie(Movie movie) throws SQLException {
@@ -210,4 +218,26 @@ public class MovieDAO implements IMovieDAO {
         return -1;
     }
 
+    @Override
+    public LocalDateTime getMovieShowtimeByCinema(int ma_rap, int ma_phim) throws SQLException {
+        try (Connection c = DBConnection.getConnection()) {
+            PreparedStatement ps = c.prepareStatement(SELECT_MOVIE_SHOWTIME_BY_CINEMA);
+            ps.setInt(1, ma_phim);
+            ps.setInt(2, ma_rap);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) { 
+                java.sql.Timestamp ts = rs.getTimestamp(1);
+                if (ts != null) {
+                    return ts.toLocalDateTime();
+                }
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return null;
+    }
+    public static void main(String[] args) throws SQLException {
+        MovieDAO m = new MovieDAO();
+        System.out.println(m.selectMovie(1).toString());
+    }
 }

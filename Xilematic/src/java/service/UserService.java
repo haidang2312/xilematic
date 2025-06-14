@@ -16,7 +16,7 @@ import dao.UserDAO;
  *
  * @author ADMIN
  */
-public class UserServiceImpl implements IUserService {
+public class UserService implements IUserService {
 
     private UserDAO userDao = new UserDAO();
 
@@ -25,7 +25,7 @@ public class UserServiceImpl implements IUserService {
         try {
             userDao.insertUser(user);
         } catch (SQLException ex) {
-            Logger.getLogger(UserServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(UserService.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -37,7 +37,7 @@ public class UserServiceImpl implements IUserService {
             }
             userDao.insertUser(user);
         } catch (SQLException ex) {
-            Logger.getLogger(UserServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(UserService.class.getName()).log(Level.SEVERE, null, ex);
             return false;
         }
         return true;
@@ -48,7 +48,7 @@ public class UserServiceImpl implements IUserService {
         try {
             return userDao.login(username, password);
         } catch (SQLException ex) {
-            Logger.getLogger(UserServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(UserService.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;
     }
@@ -58,7 +58,7 @@ public class UserServiceImpl implements IUserService {
         try {
             return userDao.selectUser(id);
         } catch (SQLException ex) {
-            Logger.getLogger(UserServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(UserService.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;
     }
@@ -68,7 +68,7 @@ public class UserServiceImpl implements IUserService {
         try {
             return userDao.selectAllUsers();
         } catch (SQLException ex) {
-            Logger.getLogger(UserServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(UserService.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;
     }
@@ -78,7 +78,7 @@ public class UserServiceImpl implements IUserService {
         try {
             return userDao.deleteUser(id);
         } catch (SQLException ex) {
-            Logger.getLogger(UserServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(UserService.class.getName()).log(Level.SEVERE, null, ex);
         }
         return false;
     }
@@ -88,7 +88,7 @@ public class UserServiceImpl implements IUserService {
         try {
             return userDao.updateUser(user);
         } catch (SQLException ex) {
-            Logger.getLogger(UserServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(UserService.class.getName()).log(Level.SEVERE, null, ex);
         }
         return false;
     }
@@ -98,7 +98,7 @@ public class UserServiceImpl implements IUserService {
         try {
             return userDao.isUsernameExist(username);
         } catch (SQLException ex) {
-            Logger.getLogger(UserServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(UserService.class.getName()).log(Level.SEVERE, null, ex);
         }
         return false;
     }
@@ -108,7 +108,7 @@ public class UserServiceImpl implements IUserService {
         try {
             return userDao.getUsersForPage(currentPage, pageSize);
         } catch (SQLException ex) {
-            Logger.getLogger(UserServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(UserService.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;
     }
@@ -118,7 +118,7 @@ public class UserServiceImpl implements IUserService {
         try {
             return userDao.getTotalUsersCount();
         } catch (SQLException ex) {
-            Logger.getLogger(UserServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(UserService.class.getName()).log(Level.SEVERE, null, ex);
         }
         return -1;
     }

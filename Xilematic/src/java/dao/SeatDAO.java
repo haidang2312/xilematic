@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package dao;
 
 import context.DBConnection;
@@ -12,12 +8,10 @@ import java.util.ArrayList;
 import java.util.List;
 import model.Seat;
 
-/**
- *
- * @author DELL
- */
-public class SeatDAO implements ISeatDAO{
+public class SeatDAO implements ISeatDAO {
+
     private final static String SELECT_SEATS_BY_CINEMA = "SELECT * FROM Ghe WHERE ma_rap = ?";
+
     @Override
     public List<Seat> selectSeatsByCinemaId(int ma_rap) {
         List<Seat> result = new ArrayList<>();
@@ -38,6 +32,7 @@ public class SeatDAO implements ISeatDAO{
         }
         return result;
     }
+
     public static void main(String[] args) {
         SeatDAO a = new SeatDAO();
         List<Seat> l = a.selectSeatsByCinemaId(1);
@@ -45,4 +40,4 @@ public class SeatDAO implements ISeatDAO{
             System.out.println(seat.toString());
         }
     }
-}   
+}

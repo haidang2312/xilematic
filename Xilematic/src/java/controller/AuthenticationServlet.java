@@ -15,12 +15,12 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import model.User;
 import service.IUserService;
-import service.UserServiceImpl;
+import service.UserService;
 
 @WebServlet(name = "AuthenticateServlet", urlPatterns = {"/authenticate"})
 public class AuthenticationServlet extends HttpServlet {
 
-    private final IUserService userService = new UserServiceImpl();
+    private final IUserService userService = new UserService();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)

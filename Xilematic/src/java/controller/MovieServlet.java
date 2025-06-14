@@ -12,12 +12,12 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import model.Movie;
 import service.IMovieService;
-import service.MovieServiceImpl;
+import service.MovieService;
 
 @WebServlet(name = "MovieServlet", urlPatterns = {"/movies"})
 public class MovieServlet extends HttpServlet {
 
-    private final IMovieService movieService = new MovieServiceImpl();
+    private final IMovieService movieService = new MovieService();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
