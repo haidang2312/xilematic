@@ -20,8 +20,8 @@ public class Movie {
     private LocalDate releaseDate;
     private int rate;
     private boolean hot;
-    //1 - dang chieu
-    //0 - sap chieu
+    //1 - dang chieu(true)
+    //0 - sap chieu(false)
     private boolean status;
     private String actor;
     private String director;

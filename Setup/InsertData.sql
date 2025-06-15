@@ -16,7 +16,7 @@ INSERT INTO
 VALUES
     (
         N'Lật Mặt 8: Vòng Tay Nắng',
-        'https://www.youtube.com/watch?v=9Rj2V8qvKoc',
+        'https://www.youtube.com/embed/9Rj2V8qvKoc?si=hcPdHix27vJHWwOw',
         'https://iguov8nhvyobj.vcdn.cloud/media/catalog/product/cache/1/image/1800x/71252117777b696995f01934522c402d/l/m/lm-8.jpg',
         N'Một bộ phim về sự khác biệt quan điểm giữa ba thế hệ ông bà cha mẹ con cháu.
 	Ai cũng đúng ở góc nhìn của mình nhưng đứng trước hoài bão của tuổi trẻ, cuối cùng thì ai sẽ là người phải nghe theo người còn lại?
@@ -31,7 +31,7 @@ VALUES
     ),
     (
         N'Thunderbolts (Biệt Đội Sấm Sét)',
-        'https://www.youtube.com/watch?v=Xhdvdro5n0o',
+        'https://www.youtube.com/embed/Xhdvdro5n0o?si=WWnicgO-CgJKdrCN',
         'https://upload.wikimedia.org/wikipedia/vi/thumb/9/90/Thunderbolts%2A_poster.jpg/250px-Thunderbolts%2A_poster.jpg',
         N'Một nhóm siêu anh hùng mới được thành lập nhằm đối phó với mối đe dọa toàn cầu. Với sự góp mặt của các nhân vật như Florence Pugh và Sebastian Stan, phim mang đến các pha hành động mãn nhãn cùng cốt truyện đầy bất ngờ.',
         '2025-05-01',
@@ -44,7 +44,7 @@ VALUES
     ),
     (
         N'Holy Night: Demon Hunters (Đêm Thánh: Đội Săn Quỷ)',
-        'https://www.youtube.com/watch?v=4iFwxYBjrMw',
+        'https://www.youtube.com/embed/4iFwxYBjrMw?si=cvsG8xgZb4Inoa8H',
         'https://iguov8nhvyobj.vcdn.cloud/media/catalog/product/cache/1/image/1800x/71252117777b696995f01934522c402d/h/o/holy-night_main-poster_intl-001.jpg',
         N'Trong một đêm thánh linh thiêng, thế lực bóng tối trỗi dậy đe dọa nhân loại. Một đội săn quỷ được triệu tập để ngăn chặn sự kiện tận thế.',
         '2025-05-02',
@@ -57,7 +57,7 @@ VALUES
     ),
     (
         N'Yadang: The Snitch (Ba Mặt Lật Kèo)',
-        'https://www.youtube.com/watch?v=AhvXh0Rv0_c',
+        'https://www.youtube.com/embed/AhvXh0Rv0_c?si=X13Q1ewgOiREhZZH',
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTE0yQgtaIIkdMKLs5r23tTxqRG1lIJMvHluQ&s',
         N'Một người đàn ông bị kéo vào cuộc chiến giữa tội ác và công lý khi ký ức đau thương trong quá khứ trỗi dậy. Những bí mật dần được hé lộ khiến khán giả căng thẳng theo dõi đến phút cuối.',
         '2025-04-25',
@@ -70,7 +70,7 @@ VALUES
     ),
     (
         N'The Stone: Buôn Thần Bán Thánh',
-        'https://www.youtube.com/watch?v=LO0iW5sGizc',
+        'https://www.youtube.com/embed/LO0iW5sGizc?si=gU4_Tdoob-1LMs26',
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDNp3iAEw9dmzqZa5Mg_oAgQv13GdnDS9VBQ&s',
         N'Một viên đá thần bí có khả năng ban phát quyền năng rơi vào tay kẻ xấu. Một người đàn ông mang trọng trách bảo vệ viên đá phải bước vào hành trình sinh tử để giữ cân bằng giữa thiện và ác.',
         '2025-04-20',
@@ -83,7 +83,7 @@ VALUES
     ),
     (
         N'Sinners: Tội Đồ',
-        'https://www.youtube.com/watch?v=KQwChFH4YQk',
+        'https://www.youtube.com/embed/KQwChFH4YQk?si=vLS4AU4iEx6Ecffl',
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5XaPtS67W9Eo35t0w-3hf7a7YxzhRWchqWg&s',
         N'Một nhóm người bị mắc kẹt trong căn nhà hoang. Khi đêm xuống, những tội lỗi trong quá khứ dần sống dậy và truy đuổi từng người một.',
         '2025-04-27',
@@ -96,7 +96,7 @@ VALUES
     ),
     (
         N'Địa Đạo: Mặt Trời Trong Bóng Tối',
-        'https://www.youtube.com/watch?v=m6i4uRiLEKU',
+        'https://www.youtube.com/embed/m6i4uRiLEKU?si=XLDXCCddsMKv1XqT',
         'https://upload.wikimedia.org/wikipedia/vi/thumb/d/df/Diadao2024.jpg/250px-Diadao2024.jpg',
         N'Lấy bối cảnh hệ thống địa đạo thời kháng chiến, phim tái hiện các trận chiến sinh tử trong lòng đất và những câu chuyện về tinh thần chiến đấu bất khuất của người Việt Nam.',
         '2025-04-15',
@@ -109,7 +109,7 @@ VALUES
     ),
     (
         N'28 Years Later: 28 Năm Sau Tận Thế',
-        'https://www.youtube.com/watch?v=VP8P9fmHu7E',
+        'https://www.youtube.com/embed/VP8P9fmHu7E?si=cHXNPzWw_zXdFxEm',
         'https://iguov8nhvyobj.vcdn.cloud/media/catalog/product/cache/1/image/c5f0a1eff4c394a251036189ccddaacd/2/8/28yl_uk_online_1080x1350_black-hazard_05.jpg',
         N'Hơn hai thập kỷ sau sự kiện diệt vong, nhân loại bước vào thời kỳ mới đầy hỗn loạn. Những người sống sót phải vật lộn trong một thế giới nơi hy vọng và bóng tối giành giật nhau từng ngày.',
         '2025-06-05',
@@ -122,7 +122,7 @@ VALUES
     ),
     (
         N'Dưới Đáy Hồ',
-        'https://www.youtube.com/watch?v=aDpPc-sMThQ',
+        'https://www.youtube.com/embed/aDpPc-sMThQ?si=3XNUfuy-ghbN3Ujl',
         'https://iguov8nhvyobj.vcdn.cloud/media/catalog/product/cache/3/image/c5f0a1eff4c394a251036189ccddaacd/t/e/teaser_poster_ddh_standard_.jpg',
         N'Một nhóm người đến cắm trại bên một hồ nước hoang vu. Khi màn đêm buông xuống, những hiện tượng kỳ lạ xuất hiện, dẫn dắt họ đến một bí ẩn được chôn giấu từ hàng chục năm trước dưới đáy hồ.',
         '2025-06-01',
@@ -135,7 +135,7 @@ VALUES
     ),
     (
         N'Thám Tử Kiên: Kỳ Án Không Đầu',
-        'https://www.youtube.com/watch?v=QiXNbEKF3U0',
+        'https://www.youtube.com/embed/QiXNbEKF3U0?si=zKsMlXZrKsuIXWc4',
         'https://api-website.cinestar.com.vn/media/wysiwyg/Posters/04-2025/poster-tham-tu-kien.jpg',
         N'Một vụ án bí ẩn không có đầu mối, thám tử Kiên phải đối mặt với những thử thách chưa từng có để giải mã bí ẩn này.',
         '2025-04-28',
@@ -148,7 +148,7 @@ VALUES
     ),
     (
         N'Trạng Quỳnh Nhí: Truyền Thuyết Kim Ngưu',
-        'https://www.youtube.com/watch?v=YQdA6Ou4xZk',
+        'https://www.youtube.com/embed/YQdA6Ou4xZk?si=JzXMPhhXacgXI5a0',
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5iQ9tOPnu0kaLSxBCNMd_qo9zKk_BG2DGIg&s',
         N'Phiên bản nhí của Trạng Quỳnh với những câu chuyện hài hước, dí dỏm và bài học ý nghĩa dành cho thiếu nhi.',
         '2025-06-10',
@@ -161,7 +161,7 @@ VALUES
     ),
     (
         N'Dế Mèn: Cuộc Phiêu Lưu Tới Xóm Lầy Lội',
-        'https://www.youtube.com/watch?v=Vwwsh0QxwIs',
+        'https://www.youtube.com/embed/Vwwsh0QxwIs?si=3VMUYbvuTr-__77V',
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-3KNrpp7G4kpQHwdA3u3kAP5B1Isv4L2fOg&s',
         N'Hành trình phiêu lưu đầy thú vị và ý nghĩa của Dế Mèn cùng những người bạn qua các vùng đất đầy nguy hiểm và bất ngờ.',
         '2025-06-15',
@@ -174,7 +174,7 @@ VALUES
     ),
     (
         N'Năm Mười',
-        'https://www.youtube.com/watch?v=UQIBqQjXYbo',
+        'https://www.youtube.com/embed/UQIBqQjXYbo?si=Cxnx5y7FMI4OI3Sz',
         'https://iguov8nhvyobj.vcdn.cloud/media/catalog/product/cache/1/image/c5f0a1eff4c394a251036189ccddaacd/4/0/406x600-510.jpg',
         N'Một câu chuyện hồi hộp với nhiều tình tiết bất ngờ, khi một nhân vật phải đưa ra 50 lựa chọn sinh tử để cứu lấy người thân.',
         '2025-06-08',
@@ -187,7 +187,7 @@ VALUES
     ),
     (
         N'The Smurfs Movie: Phim Xì Trum',
-        'https://www.youtube.com/watch?v=gTBE3iIQgMo',
+        'https://www.youtube.com/embed/gTBE3iIQgMo?si=nAdSC07FvS3lPAZN',
         'https://thegioiblu-ray.com/resources/200ceb26807d6bf99fd6f4f0d1ca54d4/1%202D25G/4k-019.JPG',
         N'Những cuộc phiêu lưu mới của các chú Xì Trum trong thế giới thần tiên đầy màu sắc, vui nhộn và gắn kết gia đình.',
         '2025-06-12',
@@ -200,7 +200,7 @@ VALUES
     ),
     (
         N'The Bad Guys 2: Băng Đảng Quái Kiệt 2',
-        'https://www.youtube.com/watch?v=ql1mh0P6shE',
+        'https://www.youtube.com/embed/ql1mh0P6shE?si=82Yf4tzPgApyGehP',
         'https://iguov8nhvyobj.vcdn.cloud/media/catalog/product/cache/1/image/c5f0a1eff4c394a251036189ccddaacd/4/7/470x700-badguys2.png',
         N'Tiếp tục hành trình của nhóm "quái kiệt" trong các phi vụ hài hước, phá án, và cải tà quy chính theo cách không ai ngờ tới.',
         '2025-06-18',
@@ -213,7 +213,7 @@ VALUES
     ),
     (
         N'M3GAN 2.0',
-        'https://www.youtube.com/watch?v=IYLHdEzsk1s',
+        'https://www.youtube.com/embed/IYLHdEzsk1s?si=3P4Xv_ngSkDow2zG',
         'https://iguov8nhvyobj.vcdn.cloud/media/catalog/product/cache/1/image/c5f0a1eff4c394a251036189ccddaacd/m/g/mg2_mainposter_400x633.jpg',
         N'Phiên bản nâng cấp của robot M3GAN, thông minh hơn, nguy hiểm hơn. Một câu chuyện căng thẳng về ranh giới giữa công nghệ và đạo đức.',
         '2025-06-22',
@@ -226,7 +226,7 @@ VALUES
     ),
     (
         N'How to Train Your Dragon: Bí Kíp Luyện Rồng',
-        'https://www.youtube.com/watch?v=3pmnV-OQWXo',
+        'https://www.youtube.com/embed/3pmnV-OQWXo?si=c3fnQeQ7GXuVsRED',
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHD4y8_Xi5d-viPjnz0oxJwQlt9KslPJ-6BA&s',
         N'Hành trình huấn luyện rồng đầy cảm xúc của cậu bé Hiccup khi đối mặt với những thử thách về tình bạn và sự trưởng thành.',
         '2025-06-30',
@@ -239,7 +239,7 @@ VALUES
     ),
     (
         N'Jurassic World: Thế Giới Khủng Long Tái Sinh',
-        'https://www.youtube.com/watch?v=sVGj40XDI-g',
+        'https://www.youtube.com/embed/sVGj40XDI-g?si=f5H0yj9oqYEZ_Cm3',
         'https://iguov8nhvyobj.vcdn.cloud/media/catalog/product/cache/1/image/c5f0a1eff4c394a251036189ccddaacd/j/w/jwr_teaser_470x700.jpg',
         N'Sự trở lại của thế giới khủng long với các cuộc phiêu lưu hoành tráng và trận chiến giữa con người và tự nhiên.',
         '2025-07-05',
@@ -253,7 +253,7 @@ VALUES
 
 --INSERT THE LOAI
 INSERT INTO
-    TheLoai (ma_the_loai, ten_the_loai)
+    TheLoai(ma_the_loai, ten_the_loai)
 VALUES
     (1, N'Hành động'),
     (2, N'Tâm lý'),
@@ -2153,109 +2153,188 @@ VALUES
     (1199, 'D9', N'Thường', 30),
     (1200, 'D10', N'Thường', 30);
 
-
-    INSERT INTO LichChieu (ma_rap, ma_phim, ngay_gio_chieu)
+INSERT INTO
+    LichChieu (ma_rap, ma_phim, ngay_gio_chieu)
 VALUES
     -- Rạp CGV Vincom Đồng Khởi 1 chiếu các phim trong ngày
-    (1, 1, '2025-04-30 08:00:00'), -- Lật Mặt 8: Vòng Tay Nắng
-    (1, 2, '2025-04-30 10:00:00'), -- Thunderbolts (Biệt Đội Sấm Sét)
-    (1, 3, '2025-04-30 12:00:00'), -- Holy Night: Demon Hunters (Đêm Thánh: Đội Săn Quỷ)
-    (1, 4, '2025-04-30 14:00:00'), -- Yadang: The Snitch (Ba Mặt Lật Kèo)
-    (1, 5, '2025-04-30 16:00:00'), -- Nhà Săn Tiền
-    (1, 6, '2025-04-30 18:00:00'), -- 28 Years Later: 28 Năm Sau Tận Thế
-    (1, 7, '2025-04-30 20:00:00'), -- Sinners: Tội Đồ
-    (1, 8, '2025-04-30 22:00:00'), -- The Stone: Buôn Thần Bán Thánh
-    (1, 9, '2025-04-30 23:30:00'), -- Trạng Quỳnh Nhí: Truyền Thuyết Kim Ngưu
+    (1, 1, '2025-04-30 08:00:00'),
+    -- Lật Mặt 8: Vòng Tay Nắng
+    (1, 2, '2025-04-30 10:00:00'),
+    -- Thunderbolts (Biệt Đội Sấm Sét)
+    (1, 3, '2025-04-30 12:00:00'),
+    -- Holy Night: Demon Hunters (Đêm Thánh: Đội Săn Quỷ)
+    (1, 4, '2025-04-30 14:00:00'),
+    -- Yadang: The Snitch (Ba Mặt Lật Kèo)
+    (1, 5, '2025-04-30 16:00:00'),
+    -- Nhà Săn Tiền
+    (1, 6, '2025-04-30 18:00:00'),
+    -- 28 Years Later: 28 Năm Sau Tận Thế
+    (1, 7, '2025-04-30 20:00:00'),
+    -- Sinners: Tội Đồ
+    (1, 8, '2025-04-30 22:00:00'),
+    -- The Stone: Buôn Thần Bán Thánh
+    (1, 9, '2025-04-30 23:30:00'),
+    -- Trạng Quỳnh Nhí: Truyền Thuyết Kim Ngưu
+    -- Rạp CGV Aeon Mall Bình Dương chiếu các phim trong ngày
+    (2, 1, '2025-04-30 09:00:00'),
+    -- Lật Mặt 8: Vòng Tay Nắng
+    (2, 2, '2025-04-30 11:00:00'),
+    -- Thunderbolts (Biệt Đội Sấm Sét)
+    (2, 3, '2025-04-30 13:00:00'),
+    -- Holy Night: Demon Hunters (Đêm Thánh: Đội Săn Quỷ)
+    (2, 4, '2025-04-30 15:00:00'),
+    -- Yadang: The Snitch (Ba Mặt Lật Kèo)
+    (2, 5, '2025-04-30 17:00:00'),
+    -- The Stone: Buôn Thần Bán Thánh
+    (2, 6, '2025-04-30 19:00:00'),
+    -- Sinners: Tội Đồ
+    (2, 7, '2025-04-30 21:00:00'),
+    -- 28 Years Later: 28 Năm Sau Tận Thế
+    (2, 8, '2025-04-30 23:00:00'),
+    -- Trạng Quỳnh Nhí: Truyền Thuyết Kim Ngưu
+    -- Lotte Cinema Hà Nội chiếu các phim trong ngày
+    (3, 1, '2025-05-01 08:30:00'),
+    -- Lật Mặt 8: Vòng Tay Nắng
+    (3, 9, '2025-05-01 10:30:00'),
+    -- Trạng Quỳnh Nhí: Truyền Thuyết Kim Ngưu
+    (3, 10, '2025-05-01 12:30:00'),
+    -- Thám Tử Kiên: Kỳ Án Không Đầu
+    (3, 2, '2025-05-01 14:30:00'),
+    -- Thunderbolts (Biệt Đội Sấm Sét)
+    (3, 3, '2025-05-01 16:30:00'),
+    -- 28 Years Later: 28 Năm Sau Tận Thế
+    (3, 4, '2025-05-01 18:30:00'),
+    -- Yadang: The Snitch (Ba Mặt Lật Kèo)
+    (3, 5, '2025-05-01 20:30:00'),
+    -- The Stone: Buôn Thần Bán Thánh
+    (3, 6, '2025-05-01 22:30:00'),
+    -- Sinners: Tội Đồ
+    (3, 7, '2025-05-01 23:59:00'),
+    -- Holy Night: Demon Hunters (Đêm Thánh: Đội Săn Quỷ)
+    (4, 1, '2025-04-30 08:00:00'),
+    -- Lật Mặt 8: Vòng Tay Nắng
+    (4, 2, '2025-04-30 10:00:00'),
+    -- Thunderbolts (Biệt Đội Sấm Sét)
+    (4, 3, '2025-04-30 12:00:00'),
+    -- Holy Night: Demon Hunters (Đêm Thánh: Đội Săn Quỷ)
+    (4, 4, '2025-04-30 14:00:00'),
+    -- Yadang: The Snitch (Ba Mặt Lật Kèo)
+    (4, 5, '2025-04-30 16:00:00'),
+    -- Nhà Săn Tiền
+    (4, 6, '2025-04-30 18:00:00'),
+    -- 28 Years Later: 28 Năm Sau Tận Thế
+    (4, 7, '2025-04-30 20:00:00'),
+    -- Sinners: Tội Đồ
+    (4, 8, '2025-04-30 22:00:00'),
+    -- The Stone: Buôn Thần Bán Thánh
+    (4, 9, '2025-04-30 23:30:00'),
+    -- Trạng Quỳnh Nhí: Truyền Thuyết Kim Ngưu
+    -- Rạp CGV Aeon Mall Bình Dương 5 chiếu các phim trong ngày
+    (5, 1, '2025-04-30 09:00:00'),
+    -- Lật Mặt 8: Vòng Tay Nắng
+    (5, 2, '2025-04-30 11:00:00'),
+    -- Thunderbolts (Biệt Đội Sấm Sét)
+    (5, 3, '2025-04-30 13:00:00'),
+    -- Holy Night: Demon Hunters (Đêm Thánh: Đội Săn Quỷ)
+    (5, 4, '2025-04-30 15:00:00'),
+    -- Yadang: The Snitch (Ba Mặt Lật Kèo)
+    (5, 5, '2025-04-30 17:00:00'),
+    -- The Stone: Buôn Thần Bán Thánh
+    (5, 6, '2025-04-30 19:00:00'),
+    -- Sinners: Tội Đồ
+    (5, 7, '2025-04-30 21:00:00'),
+    -- 28 Years Later: 28 Năm Sau Tận Thế
+    (5, 8, '2025-04-30 23:00:00'),
+    -- Trạng Quỳnh Nhí: Truyền Thuyết Kim Ngưu
+    -- Rạp Lotte Cinema Hà Nội 6 chiếu các phim trong ngày
+    (6, 1, '2025-05-01 08:30:00'),
+    -- Lật Mặt 8: Vòng Tay Nắng
+    (6, 9, '2025-05-01 10:30:00'),
+    -- Trạng Quỳnh Nhí: Truyền Thuyết Kim Ngưu
+    (6, 10, '2025-05-01 12:30:00'),
+    -- Thám Tử Kiên: Kỳ Án Không Đầu
+    (6, 2, '2025-05-01 14:30:00'),
+    -- Thunderbolts (Biệt Đội Sấm Sét)
+    (6, 3, '2025-05-01 16:30:00'),
+    -- 28 Years Later: 28 Năm Sau Tận Thế
+    (6, 4, '2025-05-01 18:30:00'),
+    -- Yadang: The Snitch (Ba Mặt Lật Kèo)
+    (6, 5, '2025-05-01 20:30:00'),
+    -- The Stone: Buôn Thần Bán Thánh
+    (6, 6, '2025-05-01 22:30:00'),
+    -- Sinners: Tội Đồ
+    (6, 7, '2025-05-01 23:59:00'),
+    -- Holy Night: Demon Hunters (Đêm Thánh: Đội Săn Quỷ)
+    -- Rạp CGV Vincom Thủ Đức 7 chiếu các phim trong ngày
+    (7, 1, '2025-04-30 09:00:00'),
+    -- Lật Mặt 8: Vòng Tay Nắng
+    (7, 2, '2025-04-30 11:00:00'),
+    -- Thunderbolts (Biệt Đội Sấm Sét)
+    (7, 3, '2025-04-30 13:00:00'),
+    -- Holy Night: Demon Hunters (Đêm Thánh: Đội Săn Quỷ)
+    (7, 4, '2025-04-30 15:00:00'),
+    -- Yadang: The Snitch (Ba Mặt Lật Kèo)
+    (7, 5, '2025-04-30 17:00:00'),
+    -- The Stone: Buôn Thần Bán Thánh
+    (7, 6, '2025-04-30 19:00:00'),
+    -- Sinners: Tội Đồ
+    (7, 7, '2025-04-30 21:00:00'),
+    -- 28 Years Later: 28 Năm Sau Tận Thế
+    (7, 8, '2025-04-30 23:00:00'),
+    -- Trạng Quỳnh Nhí: Truyền Thuyết Kim Ngưu
+    -- Rạp Lotte Cinema Đà Nẵng 8 chiếu các phim trong ngày
+    (8, 1, '2025-04-30 08:00:00'),
+    -- Lật Mặt 8: Vòng Tay Nắng
+    (8, 2, '2025-04-30 10:00:00'),
+    -- Thunderbolts (Biệt Đội Sấm Sét)
+    (8, 3, '2025-04-30 12:00:00'),
+    -- Holy Night: Demon Hunters (Đêm Thánh: Đội Săn Quỷ)
+    (8, 4, '2025-04-30 14:00:00'),
+    -- Yadang: The Snitch (Ba Mặt Lật Kèo)
+    (8, 5, '2025-04-30 16:00:00'),
+    -- The Stone: Buôn Thần Bán Thánh
+    (8, 6, '2025-04-30 18:00:00'),
+    -- Sinners: Tội Đồ
+    (8, 7, '2025-04-30 20:00:00'),
+    -- 28 Years Later: 28 Năm Sau Tận Thế
+    (8, 8, '2025-04-30 22:00:00'),
+    -- Trạng Quỳnh Nhí: Truyền Thuyết Kim Ngưu
+    -- Rạp CGV Big C Hà Nội 9 chiếu các phim trong ngày
+    (9, 1, '2025-04-30 08:30:00'),
+    -- Lật Mặt 8: Vòng Tay Nắng
+    (9, 2, '2025-04-30 10:30:00'),
+    -- Thunderbolts (Biệt Đội Sấm Sét)
+    (9, 3, '2025-04-30 12:30:00'),
+    -- Holy Night: Demon Hunters (Đêm Thánh: Đội Săn Quỷ)
+    (9, 4, '2025-04-30 14:30:00'),
+    -- Yadang: The Snitch (Ba Mặt Lật Kèo)
+    (9, 5, '2025-04-30 16:30:00'),
+    -- Nhà Săn Tiền
+    (9, 6, '2025-04-30 18:30:00'),
+    -- 28 Years Later: 28 Năm Sau Tận Thế
+    (9, 7, '2025-04-30 20:30:00'),
+    -- Sinners: Tội Đồ
+    (9, 8, '2025-04-30 22:30:00'),
+    -- The Stone: Buôn Thần Bán Thánh
+    (9, 9, '2025-04-30 23:59:00'),
+    -- Trạng Quỳnh Nhí: Truyền Thuyết Kim Ngưu
+    -- Rạp Lotte Cinema Quảng Ninh 10 chiếu các phim trong ngày
+    (10, 1, '2025-04-30 09:00:00'),
+    -- Lật Mặt 8: Vòng Tay Nắng
+    (10, 2, '2025-04-30 11:00:00'),
+    -- Thunderbolts (Biệt Đội Sấm Sét)
+    (10, 3, '2025-04-30 13:00:00'),
+    -- Holy Night: Demon Hunters (Đêm Thánh: Đội Săn Quỷ)
+    (10, 4, '2025-04-30 15:00:00'),
+    -- Yadang: The Snitch (Ba Mặt Lật Kèo)
+    (10, 5, '2025-04-30 17:00:00'),
+    -- The Stone: Buôn Thần Bán Thánh
+    (10, 6, '2025-04-30 19:00:00'),
+    -- Sinners: Tội Đồ
+    (10, 7, '2025-04-30 21:00:00'),
+    -- 28 Years Later: 28 Năm Sau Tận Thế
+    (10, 8, '2025-04-30 23:00:00');
 
--- Rạp CGV Aeon Mall Bình Dương chiếu các phim trong ngày
-    (2, 1, '2025-04-30 09:00:00'), -- Lật Mặt 8: Vòng Tay Nắng
-    (2, 2, '2025-04-30 11:00:00'), -- Thunderbolts (Biệt Đội Sấm Sét)
-    (2, 3, '2025-04-30 13:00:00'), -- Holy Night: Demon Hunters (Đêm Thánh: Đội Săn Quỷ)
-    (2, 4, '2025-04-30 15:00:00'), -- Yadang: The Snitch (Ba Mặt Lật Kèo)
-    (2, 5, '2025-04-30 17:00:00'), -- The Stone: Buôn Thần Bán Thánh
-    (2, 6, '2025-04-30 19:00:00'), -- Sinners: Tội Đồ
-    (2, 7, '2025-04-30 21:00:00'), -- 28 Years Later: 28 Năm Sau Tận Thế
-    (2, 8, '2025-04-30 23:00:00'), -- Trạng Quỳnh Nhí: Truyền Thuyết Kim Ngưu
+update Ghe
+set da_dat = 0
 
--- Lotte Cinema Hà Nội chiếu các phim trong ngày
-    (3, 1, '2025-05-01 08:30:00'), -- Lật Mặt 8: Vòng Tay Nắng
-    (3, 9, '2025-05-01 10:30:00'), -- Trạng Quỳnh Nhí: Truyền Thuyết Kim Ngưu
-    (3, 10, '2025-05-01 12:30:00'), -- Thám Tử Kiên: Kỳ Án Không Đầu
-    (3, 2, '2025-05-01 14:30:00'), -- Thunderbolts (Biệt Đội Sấm Sét)
-    (3, 3, '2025-05-01 16:30:00'), -- 28 Years Later: 28 Năm Sau Tận Thế
-    (3, 4, '2025-05-01 18:30:00'), -- Yadang: The Snitch (Ba Mặt Lật Kèo)
-    (3, 5, '2025-05-01 20:30:00'), -- The Stone: Buôn Thần Bán Thánh
-    (3, 6, '2025-05-01 22:30:00'), -- Sinners: Tội Đồ
-    (3, 7, '2025-05-01 23:59:00'), -- Holy Night: Demon Hunters (Đêm Thánh: Đội Săn Quỷ)
-
-    (4, 1, '2025-04-30 08:00:00'), -- Lật Mặt 8: Vòng Tay Nắng
-    (4, 2, '2025-04-30 10:00:00'), -- Thunderbolts (Biệt Đội Sấm Sét)
-    (4, 3, '2025-04-30 12:00:00'), -- Holy Night: Demon Hunters (Đêm Thánh: Đội Săn Quỷ)
-    (4, 4, '2025-04-30 14:00:00'), -- Yadang: The Snitch (Ba Mặt Lật Kèo)
-    (4, 5, '2025-04-30 16:00:00'), -- Nhà Săn Tiền
-    (4, 6, '2025-04-30 18:00:00'), -- 28 Years Later: 28 Năm Sau Tận Thế
-    (4, 7, '2025-04-30 20:00:00'), -- Sinners: Tội Đồ
-    (4, 8, '2025-04-30 22:00:00'), -- The Stone: Buôn Thần Bán Thánh
-    (4, 9, '2025-04-30 23:30:00'), -- Trạng Quỳnh Nhí: Truyền Thuyết Kim Ngưu
-
--- Rạp CGV Aeon Mall Bình Dương 5 chiếu các phim trong ngày
-    (5, 1, '2025-04-30 09:00:00'), -- Lật Mặt 8: Vòng Tay Nắng
-    (5, 2, '2025-04-30 11:00:00'), -- Thunderbolts (Biệt Đội Sấm Sét)
-    (5, 3, '2025-04-30 13:00:00'), -- Holy Night: Demon Hunters (Đêm Thánh: Đội Săn Quỷ)
-    (5, 4, '2025-04-30 15:00:00'), -- Yadang: The Snitch (Ba Mặt Lật Kèo)
-    (5, 5, '2025-04-30 17:00:00'), -- The Stone: Buôn Thần Bán Thánh
-    (5, 6, '2025-04-30 19:00:00'), -- Sinners: Tội Đồ
-    (5, 7, '2025-04-30 21:00:00'), -- 28 Years Later: 28 Năm Sau Tận Thế
-    (5, 8, '2025-04-30 23:00:00'), -- Trạng Quỳnh Nhí: Truyền Thuyết Kim Ngưu
-
--- Rạp Lotte Cinema Hà Nội 6 chiếu các phim trong ngày
-    (6, 1, '2025-05-01 08:30:00'), -- Lật Mặt 8: Vòng Tay Nắng
-    (6, 9, '2025-05-01 10:30:00'), -- Trạng Quỳnh Nhí: Truyền Thuyết Kim Ngưu
-    (6, 10, '2025-05-01 12:30:00'), -- Thám Tử Kiên: Kỳ Án Không Đầu
-    (6, 2, '2025-05-01 14:30:00'), -- Thunderbolts (Biệt Đội Sấm Sét)
-    (6, 3, '2025-05-01 16:30:00'), -- 28 Years Later: 28 Năm Sau Tận Thế
-    (6, 4, '2025-05-01 18:30:00'), -- Yadang: The Snitch (Ba Mặt Lật Kèo)
-    (6, 5, '2025-05-01 20:30:00'), -- The Stone: Buôn Thần Bán Thánh
-    (6, 6, '2025-05-01 22:30:00'), -- Sinners: Tội Đồ
-    (6, 7, '2025-05-01 23:59:00'), -- Holy Night: Demon Hunters (Đêm Thánh: Đội Săn Quỷ)
-
--- Rạp CGV Vincom Thủ Đức 7 chiếu các phim trong ngày
-    (7, 1, '2025-04-30 09:00:00'), -- Lật Mặt 8: Vòng Tay Nắng
-    (7, 2, '2025-04-30 11:00:00'), -- Thunderbolts (Biệt Đội Sấm Sét)
-    (7, 3, '2025-04-30 13:00:00'), -- Holy Night: Demon Hunters (Đêm Thánh: Đội Săn Quỷ)
-    (7, 4, '2025-04-30 15:00:00'), -- Yadang: The Snitch (Ba Mặt Lật Kèo)
-    (7, 5, '2025-04-30 17:00:00'), -- The Stone: Buôn Thần Bán Thánh
-    (7, 6, '2025-04-30 19:00:00'), -- Sinners: Tội Đồ
-    (7, 7, '2025-04-30 21:00:00'), -- 28 Years Later: 28 Năm Sau Tận Thế
-    (7, 8, '2025-04-30 23:00:00'), -- Trạng Quỳnh Nhí: Truyền Thuyết Kim Ngưu
-
--- Rạp Lotte Cinema Đà Nẵng 8 chiếu các phim trong ngày
-    (8, 1, '2025-04-30 08:00:00'), -- Lật Mặt 8: Vòng Tay Nắng
-    (8, 2, '2025-04-30 10:00:00'), -- Thunderbolts (Biệt Đội Sấm Sét)
-    (8, 3, '2025-04-30 12:00:00'), -- Holy Night: Demon Hunters (Đêm Thánh: Đội Săn Quỷ)
-    (8, 4, '2025-04-30 14:00:00'), -- Yadang: The Snitch (Ba Mặt Lật Kèo)
-    (8, 5, '2025-04-30 16:00:00'), -- The Stone: Buôn Thần Bán Thánh
-    (8, 6, '2025-04-30 18:00:00'), -- Sinners: Tội Đồ
-    (8, 7, '2025-04-30 20:00:00'), -- 28 Years Later: 28 Năm Sau Tận Thế
-    (8, 8, '2025-04-30 22:00:00'), -- Trạng Quỳnh Nhí: Truyền Thuyết Kim Ngưu
-
--- Rạp CGV Big C Hà Nội 9 chiếu các phim trong ngày
-    (9, 1, '2025-04-30 08:30:00'), -- Lật Mặt 8: Vòng Tay Nắng
-    (9, 2, '2025-04-30 10:30:00'), -- Thunderbolts (Biệt Đội Sấm Sét)
-    (9, 3, '2025-04-30 12:30:00'), -- Holy Night: Demon Hunters (Đêm Thánh: Đội Săn Quỷ)
-    (9, 4, '2025-04-30 14:30:00'), -- Yadang: The Snitch (Ba Mặt Lật Kèo)
-    (9, 5, '2025-04-30 16:30:00'), -- Nhà Săn Tiền
-    (9, 6, '2025-04-30 18:30:00'), -- 28 Years Later: 28 Năm Sau Tận Thế
-    (9, 7, '2025-04-30 20:30:00'), -- Sinners: Tội Đồ
-    (9, 8, '2025-04-30 22:30:00'), -- The Stone: Buôn Thần Bán Thánh
-    (9, 9, '2025-04-30 23:59:00'), -- Trạng Quỳnh Nhí: Truyền Thuyết Kim Ngưu
-
--- Rạp Lotte Cinema Quảng Ninh 10 chiếu các phim trong ngày
-    (10, 1, '2025-04-30 09:00:00'), -- Lật Mặt 8: Vòng Tay Nắng
-    (10, 2, '2025-04-30 11:00:00'), -- Thunderbolts (Biệt Đội Sấm Sét)
-    (10, 3, '2025-04-30 13:00:00'), -- Holy Night: Demon Hunters (Đêm Thánh: Đội Săn Quỷ)
-    (10, 4, '2025-04-30 15:00:00'), -- Yadang: The Snitch (Ba Mặt Lật Kèo)
-    (10, 5, '2025-04-30 17:00:00'), -- The Stone: Buôn Thần Bán Thánh
-    (10, 6, '2025-04-30 19:00:00'), -- Sinners: Tội Đồ
-    (10, 7, '2025-04-30 21:00:00'), -- 28 Years Later: 28 Năm Sau Tận Thế
-    (10, 8, '2025-04-30 23:00:00'); -- Trạng Quỳnh Nhí: Truyền Thuyết Kim Ngưu

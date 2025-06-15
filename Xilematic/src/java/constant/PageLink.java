@@ -23,5 +23,6 @@ public class PageLink {
     public static final String HOME_PAGE = "page/home.jsp";
     public static final String ADMIN_PAGE = "page/admin.jsp";
     public static final String ERROR_PAGE = "page/error.jsp";
+    public static final String DETAIL_PAGE = "page/detail.jsp";
 
 }

@@ -34,7 +34,7 @@ public class MovieDAO implements IMovieDAO {
                                                    ,[dao_dien])
                                              VALUES
                                                    (?,?,?,?,?,?,?,?,?,?,?)""";
-    private final String DELETE_MOVIE = "DELETE FROM Phim WHERE ma_phim = ?";
+    private final String DELETE_MOVIE = "UPDATE Phim SET is_active = 0 WHERE ma_phim = ?";
     private final String UPDATE_MOVIE = """
                                         UPDATE [dbo].[Phim]
                                            SET [ten_phim] = ?
@@ -52,8 +52,8 @@ public class MovieDAO implements IMovieDAO {
     private final String SELECT_MOVIE = "SELECT * FROM Phim WHERE ma_phim = ?";
     private final String SELECT_ALL_MOVIES = "SELECT * FROM Phim";
     private final String SEARCH_MOVIE_BY_NAME = "SELECT * FROM Phim WHERE ten_phim LIKE";
-    private static final String PAGING_MOVIE = "SELECT * FROM Phim ORDER BY ma_phim OFFSET ? ROWS FETCH NEXT ? ROWS ONLY";
-    private static final String GET_TOTAL_OF_MOVIE = "SELECT COUNT(*) FROM Phim";
+    private static final String PAGING_MOVIE = "SELECT * FROM Phim WHERE is_active IS NULL ORDER BY ma_phim OFFSET ? ROWS FETCH NEXT ? ROWS ONLY";
+    private static final String GET_TOTAL_OF_MOVIE = "SELECT COUNT(*) FROM Phim WHERE is_active IS NULL";
 
     @Override
     public void insertMovie(Movie movie) throws SQLException {
