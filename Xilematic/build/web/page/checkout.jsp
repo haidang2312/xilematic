@@ -56,6 +56,7 @@
 
             <form action="checkout?action=confirm" method="post">
                 <input type="hidden" name="movieName" value="${movieName}">
+                <input type="hidden" name="ma_lich_chieu" value="${ma_lich_chieu}">
                 <input type="hidden" name="maRap" value="${maRap}">
                 <input type="hidden" name="showtime" value="${showtime}">
                 <input type="hidden" name="selectedSeats" value="${selectedSeats}">

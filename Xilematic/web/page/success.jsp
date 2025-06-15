@@ -34,7 +34,7 @@
                     </div>
                     <div class="detail-row">
                         <span class="detail-label">Số tiền:</span>
-                        <span class="detail-value highlight">2.450.000 ₫</span>
+                        <span class="detail-value highlight">${totalPrice} ₫</span>
                     </div>
                 </div>
 

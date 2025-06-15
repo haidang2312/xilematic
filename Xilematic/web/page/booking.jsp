@@ -79,9 +79,9 @@
                     <input type="hidden" name="movieName" value="${movie.movieName}">
                     <input type="hidden" name="selectedSeats" id="f-seats">
                     <input type="hidden" name="totalPrice" id="f-totalPrice">
-                    <p id="selected-seats">Seat: None</p>
-                    <p id="total-price">Price: 0 VND</p>
-                    <p id="warning">Please select at least 1 seat to book!</p>
+                    <p id="selected-seats">Ghế đã chọn: None</p>
+                    <p id="total-price">Tổng: 0 VND</p>
+                    <p id="warning">Vui lòng chọn ít nhất 1 ghế!</p>
                     <button class="btn-book" type="submit" onclick="submitBooking()">Xác nhận</button>
                 </form>
 
