@@ -1,40 +1,54 @@
 <%-- Document : login Created on : May 18, 2025, 1:27:57 AM Author : ADMIN --%>
 
+<%@page import="java.util.Base64"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
+<%@page import="constant.PageLink"%>
 <!DOCTYPE html>
 <html>
-
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Login</title>
-        <!--link css-->
         <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/style/login_style.css">
-        <!--logo WEB-->
         <link rel="icon" type="logo" href="asset/download.png" />
     </head>
 
     <body>
+
+        <!--giai ma cookie-->
+        <%
+            Cookie[] cookies = request.getCookies();
+            String username = null;
+            String password = null;
+
+            if (cookies != null) {
+                for (Cookie cookie : cookies) {
+                    if ("USERNAME".equals(cookie.getName())) {
+                        byte[] decodedBytes = Base64.getDecoder().decode(cookie.getValue());
+                        username = new String(decodedBytes);
+                    } else if ("PASSWORD".equals(cookie.getName())) {
+                        byte[] decodedBytes = Base64.getDecoder().decode(cookie.getValue());
+                        password = new String(decodedBytes);
+                    }
+                }
+                request.setAttribute("username", username);
+                request.setAttribute("password", password);
+            }
+        %>
+
         <div class="login-box">
-            <form action="authenticate" method="POST">
+            <form action="<%=request.getContextPath()%>/authenticate" method="POST">
                 <h2>Login</h2>
                 <div class="input-box">
                     <span class="icon"><ion-icon name="person"></ion-icon></ion-icon></span>
-                            <c:choose>
-                                <c:when test="${not empty cookie.USERNAME}">
-                            <input type="text" required name="username" value="${cookie.USERNAME.value}">
-                        </c:when>
-                        <c:otherwise>
-                            <input type="text" required name="username">
-                        </c:otherwise>
-                    </c:choose>
+                    <input type="text" required name="username" value="${empty username ? '': username}">
                     <label>Username</p></label>
                 </div>
 
                 <div class="input-box">
                     <span class="icon" id="togglePassword" style="cursor: pointer;"><ion-icon
                             name="lock-closed"></ion-icon></span>
-                    <input type="password" required name="password" id="password">
+                    <input type="password" required name="password" id="password" value="${empty password ? '' : password}">
                     <label>Password</label>
                 </div>
 
@@ -43,7 +57,7 @@
                 <div class="remember-forgot">
                     <label>
                         <c:choose>
-                            <c:when test="${not empty cookie.USERNAME}">
+                            <c:when test="${username != null}">
                                 <input type="checkbox" name="rememberMe" checked="">
                             </c:when>
                             <c:otherwise>
@@ -52,7 +66,7 @@
                         </c:choose>
                         Remember me
                     </label>
-                    <a href="forgot_password.jsp">Forgot Password?</a>
+                    <a href="">Forgot Password?</a>
                 </div>
 
                 <button type="submit" name="action" value="login">Login</button>
@@ -67,7 +81,7 @@
                 </div>
 
                 <div class="register-link">
-                    <p>Don't have an account? <a href="register.jsp">Register</a></p>
+                    <p>Don't have an account? <a href="<%=PageLink.REGISTER_PAGE%>">Register</a></p>
                 </div>
             </form>
             <script>

@@ -1,11 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package dao;
 
 import dao.IUserDAO;
 import context.DBConnection;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -15,10 +13,7 @@ import java.util.List;
 import model.User;
 import org.mindrot.jbcrypt.BCrypt;
 
-/**
- *
- * @author ADMIN
- */
+
 public class UserDAO implements IUserDAO {
 
     private static final String LOGIN = "SELECT * from NguoiDung where ten_tai_khoan LIKE ?";

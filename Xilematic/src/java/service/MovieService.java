@@ -1,10 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package service;
 
-import service.IMovieService;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.logging.Level;
@@ -13,12 +8,8 @@ import model.Movie;
 import dao.MovieDAO;
 import utils.Helper;
 
-/**
- *
- * @author ADMIN
- */
 public class MovieService implements IMovieService {
-    
+
     private MovieDAO movieDao = new MovieDAO();
     private Helper helper = new Helper();
 
@@ -30,7 +21,7 @@ public class MovieService implements IMovieService {
             Logger.getLogger(MovieService.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
     @Override
     public Movie getMovie(int id) {
         try {
@@ -40,7 +31,7 @@ public class MovieService implements IMovieService {
         }
         return null;
     }
-    
+
     @Override
     public List<Movie> getAllMovies() {
         try {
@@ -50,7 +41,7 @@ public class MovieService implements IMovieService {
         }
         return null;
     }
-    
+
     @Override
     public boolean deleteMovie(int id) {
         try {
@@ -60,7 +51,7 @@ public class MovieService implements IMovieService {
         }
         return false;
     }
-    
+
     @Override
     public boolean updateMovie(Movie movie) {
         try {
@@ -70,7 +61,7 @@ public class MovieService implements IMovieService {
         }
         return false;
     }
-    
+
     @Override
     public List<Movie> getMoviesForPage(int currentPage, int pageSize) {
         try {
@@ -80,7 +71,7 @@ public class MovieService implements IMovieService {
         }
         return null;
     }
-    
+
     @Override
     public int getTotalMoviesCount() {
         try {
@@ -90,7 +81,7 @@ public class MovieService implements IMovieService {
         }
         return -1;
     }
-    
+
     @Override
     public String getMovieShowtimeByCinema(int ma_rap, int ma_phim) {
         try {
@@ -100,5 +91,5 @@ public class MovieService implements IMovieService {
         }
         return "N/A";
     }
-    
+
 }

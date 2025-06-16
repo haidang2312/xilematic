@@ -170,112 +170,132 @@ tr:nth-child(even) {
 
 /*-------------------------------------------------------*/
 /* Popup overlay & content */
+/* Popup Overlay */
 .popup-overlay {
-    display: none;
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1000;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    display: none;
+    align-items: center;
     justify-content: center;
-    align-items: start;
-    animation: fadeIn 0.3s ease-out;
+    z-index: 999;
 }
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+.popup-overlay.show {
+    display: flex;
 }
 
 .popup-content {
-    background-color: #fff;
-    padding: 10px;
-    border-radius: 12px;
-    width: 90%;
-    max-width: 400px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    background: #fff;
+    padding: 32px 24px 24px 24px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 450px;
     position: relative;
-    transform: translateY(0);
-    animation: popupIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+    max-height: 85vh; /* Giới hạn chiều cao tối đa 85% chiều cao màn hình */
+    overflow-y: auto; /* Thêm thanh cuộn dọc khi nội dung vượt quá */
+    scrollbar-width: none;        /* Firefox */
+    -ms-overflow-style: none;     /* IE và Edge cũ */
 }
 
-@keyframes popupIn {
-    from {
-        transform: translateY(-50px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
+.popup-content::-webkit-scrollbar {
+    display: none;                /* Chrome, Safari, Edge mới */
+}
+.popup-content h2 {
+    text-align: center;
+    margin-bottom: 18px;
+}
+.popup-content label {
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 4px;
+    font-weight: 500;
+}
+.popup-content input[type="text"],
+.popup-content input[type="url"],
+.popup-content input[type="file"],
+.popup-content input[type="date"],
+.popup-content input[type="number"],
+.popup-content textarea,
+.popup-content select {
+    width: 100%;
+    padding: 7px 10px;
+    margin-bottom: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1em;
 }
 
-.popup-closing {
-    animation: popupOut 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards;
+.popup-content label input[type="checkbox"] {
+    position: relative;
+    left: 50px;
+    margin-right: 6px;
+    vertical-align: middle;
 }
 
-@keyframes popupOut {
-    to {
-        transform: translateY(-50px);
-        opacity: 0;
-    }
-}
 
+.popup-content textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+.popup-content button[type="submit"] {
+    margin-top: 16px;
+    width: 100%;
+    background: #3366cc;
+    color: #fff;
+    border: none;
+    padding: 10px 0;
+    font-size: 1.1em;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.25s;
+}
+.popup-content button[type="submit"]:hover {
+    background: #254a93;
+}
 .close-btn {
     position: absolute;
-    top: 15px;
+    top: 9px;
     right: 15px;
-    font-size: 24px;
+    font-size: 25px;
+    font-weight: bold;
+    color: #444;
     cursor: pointer;
-    color: #9e9e9e;
-    transition: all 0.2s ease;
-    width: 30px;
-    height: 30px;
+    z-index: 1001;
+}
+
+.func-btn {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
+    gap: 16px;
+    margin-top: 18px;
+    flex-wrap: wrap;
 }
 
-.close-btn:hover {
-    color: #f44336;
-    background-color: #f5f5f5;
+.func-btn .update-btn,
+.func-btn .delete-btn {
+    flex: 1 1 0px;          /* Chia đều chiều rộng */
+    padding: 12px 0;
+    font-size: 1.08em;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.18s;
+    min-width: 120px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
-.popup-header h2 {
-    color: #2E7D32;
-    font-size: 18px;
-}
 
-.popup-body p {
-    color: #616161;
-    font-size: 16px;
-}
 
-.countdown-container {
-    margin-top: 25px;
-}
 
-.countdown-bar {
-    height: 4px;
-    background-color: #e0e0e0;
-    border-radius: 3px;
-    overflow: hidden;
-}
 
-.countdown-progress {
-    height: 100%;
-    width: 100%;
-    background: linear-gradient(90deg, #4CAF50, #8BC34A);
-    transform-origin: left center;
-    transform: scaleX(1);
-    transition: transform 3s linear;
-}
+
+
+
 
 
 

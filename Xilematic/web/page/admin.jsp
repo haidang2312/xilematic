@@ -4,6 +4,9 @@
     Author     : ADMIN
 --%>
 
+<%@page import="service.MovieServiceImpl"%>
+<%@page import="service.IMovieService"%>
+<%@page import="model.Movie"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
@@ -16,31 +19,11 @@
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     </head>
     <body>
-        <!--handle login success-->
-        <!--popup này sẽ xuất hiện khi đã đăng nhập thành công-->
-        <c:if test="${requestScope.status}">
-            <div id="autoPopup" class="popup-overlay">
-                <div class="popup-content">
-                    <span class="close-btn">&times;</span>
-                    <div class="popup-header">
-                        <h2>Chào mừng bạn!</h2>
-                    </div>
-                    <div class="popup-body">
-                        <p>LOGIN SUCCESSFULLY</p>
-                    </div>
-                    <div class="countdown-container">
-                        <div class="countdown-bar">
-                            <div class="countdown-progress" id="countdownProgress"></div>
-                        </div>
-                        <div class="countdown-text"><span id="countdownText"></span></div>
-                    </div>
-                </div>
-            </div>
-        </c:if>
+
 
         <!-- header -->
         <header>
-            <div class="logo"><img src="asset/image/LOGO.png" width="50px" height="300px" alt=""></div>
+            <div class="logo"><a href="paging"><img src="asset/image/LOGO.png" width="50px" height="300px" alt=""></a></div>
             <div class="search-container">
                 <input type="text" placeholder="search" class="search" />
                 <span class="search-icon"><ion-icon name="search"></ion-icon></span>
@@ -51,7 +34,6 @@
 
         <!-- main -->
         <div class="main">
-
             <nav class="nav-bar">
                 <a href="paging?type=stats" class="nav-link"><span><ion-icon name="home"></ion-icon></span></a>
                 <a href="paging?type=users" class="nav-link"><span><ion-icon name="person"></ion-icon></span></a>
@@ -106,7 +88,8 @@
                                                     </c:choose>
                                                 </td>
                                                 <td>${movie.status ? "Now showing" : "Coming soon"}</td>
-                                                <td><a href="movie?action=showDetail&id=${movie.id}" class="detail">Detail</a></td>
+                                                <td><a href="movies?action=showDetail&id=${movie.id}" class="detail">Detail</a></td>
+
                                             </tr>
                                         </c:forEach>
                                     </c:when>
@@ -118,7 +101,7 @@
                                                 <td>${user.email}</td>
                                                 <td>${user.phoneNumber}</td>
                                                 <td>${user.typeOfUser}</td>
-                                                <td><a href="" class="detail">Detail</a></td>
+                                                <td><a href="movies?action=showDetail&id=${user.id}" id="userDetail" class="detail">Detail</a></td>
                                             </tr>
                                         </c:forEach>
                                     </c:when>
@@ -171,18 +154,122 @@
 
 
         <!-- POPUP -->
-
-
-
         <!-- popup này sẽ xuất hiện khi ấn nút Add new -->
+        <div id="addMoviePopup" class="popup-overlay" style="display:none;">
+            <div class="popup-content">
+                <span class="close-btn" onclick="document.getElementById('addMoviePopup').style.display = 'none'">&times;</span>
+                <h2>Thêm Phim Mới</h2>
+                <form action="<%=request.getContextPath()%>/movies" method="POST">
+                    <label>Tên phim:</label>
+                    <input type="text" name="title" required>
+
+                    <label>Trailer (URL):</label>
+                    <input type="url" name="trailer" required>
+
+                    <label>Ảnh đại diện (image):</label>
+                    <input type="url" name="image" accept="image/*" required>
+
+                    <label>Mô tả (description):</label>
+                    <textarea name="description" required></textarea>
+
+                    <label>Ngày phát hành (release date):</label>
+                    <input type="date" name="releaseDate" id="releaseDate" required>
+
+                    <label>Đánh giá (rate):</label>
+                    <input type="number" name="rate" min="0" max="10" step="1" required placeholder="Nhập số từ 0 tới 10">
+
+
+                    <label>Trạng thái (status):</label>
+                    <select name="status" required>
+                        <option value="true">Đang chiếu</option>
+                        <option value="false">Sắp chiếu</option>
+                    </select>
+
+                    <label>
+                        Hot (phim nổi bật)
+                        <input type="checkbox" name="hot">
+                    </label>
+
+                    <label>Diễn viên (actor):</label>
+                    <input type="text" name="actor" required>
+
+                    <label>Đạo diễn (director):</label>
+                    <input type="text" name="director" required>
+
+                    <button type="submit" name="action" value="add">Thêm phim</button>
+                </form>
+            </div>
+        </div>
 
 
 
 
 
-        <!-- popup này sẽ xuất hiện khi ấn nút Detail -->
 
-        <script src="script/popup.js"></script>
+        <!-- popup này sẽ xuất hiện khi ấn nút Detail -->                    
+        <div id="detailPopup" class="popup-overlay" style="display:none;">
+            <div class="popup-content">
+                <span class="close-btn" onclick="document.getElementById('detailPopup').style.display = 'none'">&times;</span>
+                <h2>Chi tiết</h2>
+                <form action="<%=request.getContextPath()%>/movies" method="POST" class="form-row-btn">
+                    <label>Tên phim:</label>
+                    <input type="text" name="title" value="" required="">
+
+                    <label>Trailer (URL):</label>
+                    <input type="url" name="trailer" value="" required>
+
+                    <label>Ảnh đại diện (image):</label>
+                    <input type="url" name="image" accept="image/*" value="" required>
+
+                    <label>Mô tả (description):</label>
+                    <textarea name="description"></textarea>
+
+                    <label>Ngày phát hành (release date):</label>
+                    <input type="date" name="releaseDate" id="releaseDate" value="" required>
+
+                    <label>Đánh giá (rate):</label>
+                    <input type="number" name="rate" min="0" max="10" step="1" value="" required placeholder="Nhập số từ 0 tới 10">
+
+                    <label>Trạng thái (status):</label>
+                    <select name="status" required>
+                        <option value="true">Đang chiếu</option>
+                        <option value="false">Sắp chiếu</option>
+                    </select>
+
+                    <label>
+                        Hot (phim nổi bật)
+                        <input type="checkbox" name="hot">
+                    </label>
+
+                    <label>Diễn viên (actor):</label>
+                    <input type="text" name="actor" value="" required>
+
+                    <label>Đạo diễn (director):</label>
+                    <input type="text" name="director" value="" required>
+
+                    <div class="func-btn">
+                        <button type="submit" name="action" value="update" class="update-btn">Cập nhật</button>
+                        <button type="submit" name="action" value="delete" class="delete-btn">Xóa</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                // Đóng popup khi nhấn vào nút đóng
+                document.getElementById('openPopupBtn').addEventListener('click', function () {
+                    document.getElementById('addMoviePopup').style.display = 'flex';
+                });
+            });
+        </script>
+        <script>
+            // Lấy ngày hôm nay theo định dạng yyyy-mm-dd
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('releaseDate').setAttribute('min', today);
+            document.getElementById('releaseDate').value = today;
+        </script>
         <script src="script/chart.js"></script>
         <!-- script để tương tác với popup -->
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
