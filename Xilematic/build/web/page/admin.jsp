@@ -159,7 +159,8 @@
             <div class="popup-content">
                 <span class="close-btn" onclick="document.getElementById('addMoviePopup').style.display = 'none'">&times;</span>
                 <h2>Thêm Phim Mới</h2>
-                <form action="<%=request.getContextPath()%>/movies" method="POST">
+                <!--form này sẽ được gửi đến movie servlet (url = \movies)-->
+                <form action="movies" method="POST">
                     <label>Tên phim:</label>
                     <input type="text" name="title" required>
 
@@ -211,7 +212,8 @@
             <div class="popup-content">
                 <span class="close-btn" onclick="document.getElementById('detailPopup').style.display = 'none'">&times;</span>
                 <h2>Chi tiết</h2>
-                <form action="<%=request.getContextPath()%>/movies" method="POST" class="form-row-btn">
+                <!--form này sẽ được gửi đến movie servlet (url = \movies)-->
+                <form action="movies" method="POST" class="form-row-btn">
                     <label>Tên phim:</label>
                     <input type="text" name="title" value="" required="">
 

@@ -13,8 +13,9 @@ import model.Movie;
  * @author ADMIN
  */
 public interface IMovieDAO {
+
     public void insertMovie(Movie movie) throws SQLException;
-    
+
     public Movie selectMovie(int id) throws SQLException;
 
     public List<Movie> selectAllMovies() throws SQLException;
