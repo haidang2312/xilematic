@@ -1,7 +1,6 @@
 
 package dao;
 
-import dao.IUserDAO;
 import context.DBConnection;
 
 import java.sql.Connection;

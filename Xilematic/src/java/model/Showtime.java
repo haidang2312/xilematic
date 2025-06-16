@@ -1,7 +1,7 @@
-
 package model;
 
 public class Showtime {
+
     private int ma_lich_chieu;
     private int ma_rap;
     private int ma_phim;
@@ -59,6 +59,5 @@ public class Showtime {
     public String toString() {
         return "Showtime{" + "ma_lich_chieu=" + ma_lich_chieu + ", ma_rap=" + ma_rap + ", ma_phim=" + ma_phim + ", ngay_gio_chieu=" + ngay_gio_chieu + '}';
     }
-    
-    
+
 }

@@ -9,4 +9,5 @@ public interface IShowtimeService {
     public String getCinemaNameByShowtimeID(int ma_lich_chieu);
 
     public Showtime getShowtimeInformationByID(int ma_lich_chieu);
+    
 }

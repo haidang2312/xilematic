@@ -3,19 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
-<<<<<<< HEAD
-            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/xilematic_TO/Xilematic/src/java/userDAO/UserDAO.java</file>
-=======
-            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/xilematic_TO/Xilematic/web/style/booking_style.css</file>
-            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/xilematic_TO/Xilematic/web/page/booking.jsp</file>
-            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/xilematic_TO/Xilematic/web/script/booking_js.js</file>
->>>>>>> feature/booking/dang
-=======
-            <file>file:/D:/GITHUB/xilematic/Xilematic/src/java/constant/PageLink.java</file>
-            <file>file:/D:/GITHUB/xilematic/Xilematic/src/java/controller/MovieServlet.java</file>
-            <file>file:/D:/GITHUB/xilematic/Xilematic/web/page/detail.jsp</file>
->>>>>>> origin/nguyen
+            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/xilematic_TO/Xilematic/src/java/service/SeatService.java</file>
         </group>
     </open-files>
 </project-private>

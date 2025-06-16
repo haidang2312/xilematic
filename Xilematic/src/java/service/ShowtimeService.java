@@ -21,5 +21,4 @@ public class ShowtimeService implements IShowtimeService {
     public String getCinemaNameByShowtimeID(int ma_lich_chieu) {
         return showtimeDAO.getCinemaNameByShowtimeID(ma_lich_chieu);
     }
-
 }

@@ -69,6 +69,7 @@ public class ShowtimeDAO implements IShowtimeDAO {
         }
         return "";
     }
+
     public static void main(String[] args) {
         ShowtimeDAO s = new ShowtimeDAO();
         System.out.println(s.getCinemaNameByShowtimeID(1));

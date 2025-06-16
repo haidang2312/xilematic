@@ -1,14 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package model;
 
-/**
- *
- * @author DELL
- */
 public class Seat {
+
     private String ten_ghe;
     private String loai_ghe;
     private boolean da_dat;
@@ -50,5 +43,5 @@ public class Seat {
     public String toString() {
         return "Seat{" + "ten_ghe=" + ten_ghe + ", loai_ghe=" + loai_ghe + ", da_dat=" + da_dat + '}';
     }
-    
+
 }

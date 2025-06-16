@@ -1,4 +1,3 @@
-
 package service;
 
 import java.sql.SQLException;
@@ -8,8 +7,7 @@ import java.util.logging.Logger;
 import model.User;
 import dao.UserDAO;
 
-
-public class UserService implements IUserService{
+public class UserService implements IUserService {
 
     private UserDAO userDao = new UserDAO();
 
