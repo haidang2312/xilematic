@@ -1,4 +1,4 @@
-package commentDAO;
+package dao;
 
 import model.BinhLuan;
 import java.util.List;

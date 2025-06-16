@@ -1,7 +1,7 @@
-package commentDAO;
+package dao;
 
 import model.BinhLuan;
-import dao.DBConnection;
+import context.DBConnection;
 
 import java.sql.*;
 import java.time.LocalDate;

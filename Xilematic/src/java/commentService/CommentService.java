@@ -4,7 +4,7 @@
  */
 package commentService;
 
-import commentDAO.BinhLuanDAO;
+import dao.BinhLuanDAO;
 import java.util.List;
 import model.BinhLuan;
 
