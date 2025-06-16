@@ -1,12 +1,14 @@
+
 package dao;
 
 import context.DBConnection;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
 import java.time.LocalDateTime;
+
 import java.util.ArrayList;
 import java.util.List;
 import model.Movie;
@@ -29,6 +31,7 @@ public class MovieDAO implements IMovieDAO {
                                              VALUES
                                                    (?,?,?,?,?,?,?,?,?,?,?)""";
     private final String DELETE_MOVIE = "UPDATE Phim SET is_active = 0 WHERE ma_phim = ?";
+
     private final String UPDATE_MOVIE = """
                                         UPDATE [dbo].[Phim]
                                            SET [ten_phim] = ?
@@ -52,6 +55,7 @@ public class MovieDAO implements IMovieDAO {
             + "WHERE p.ma_phim = ? and r.ma_rap = ?";
     private static final String PAGING_MOVIE = "SELECT * FROM Phim WHERE is_active IS NULL ORDER BY ma_phim OFFSET ? ROWS FETCH NEXT ? ROWS ONLY";
     private static final String GET_TOTAL_OF_MOVIE = "SELECT COUNT(*) FROM Phim WHERE is_active IS NULL";
+
 
     @Override
     public void insertMovie(Movie movie) throws SQLException {
@@ -231,4 +235,5 @@ public class MovieDAO implements IMovieDAO {
         MovieDAO m = new MovieDAO();
         System.out.println(m.selectMovie(1).toString());
     }
+
 }

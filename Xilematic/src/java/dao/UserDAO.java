@@ -1,8 +1,8 @@
 
 package dao;
 
+import dao.IUserDAO;
 import context.DBConnection;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -16,6 +16,7 @@ import org.mindrot.jbcrypt.BCrypt;
 public class UserDAO implements IUserDAO {
 
     private static final String LOGIN = "SELECT * from NguoiDung where ten_tai_khoan LIKE ?";
+//    private static final String REGISTER = "INSERT INTO NguoiDung (ten_tai_khoan, ho_ten, email, so_dt, mat_khau, loai_nguoi_dung) VALUES (?, ?, ?, ?, ?, ?)";
     private static final String INSERT_USER = "INSERT INTO NguoiDung (ten_tai_khoan, ho_ten, email, so_dt, mat_khau, loai_nguoi_dung) VALUES (?, ?, ?, ?, ?, ?)";
     private static final String SELECT_USER_BY_ID = "SELECT * FROM NguoiDung WHERE ma_nguoi_dung = ?";
     private static final String SELECT_ALL_USERS = "select * from NguoiDung";

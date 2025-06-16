@@ -3,5 +3,6 @@
     <welcome-file-list>
         <welcome-file>authentication/login.jsp</welcome-file>
         <welcome-file>front</welcome-file>
+
     </welcome-file-list>
 </web-app>

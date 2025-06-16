@@ -1,4 +1,3 @@
-
 package context;
 
 import java.sql.Connection;
@@ -24,9 +23,5 @@ public class DBConnection {
         }
         return null;
     }
-    
 
-    public static void main(String[] args) {
-        DBConnection.getConnection();
-    }
 }

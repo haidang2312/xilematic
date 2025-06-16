@@ -8,7 +8,6 @@ import model.Movie;
 
 
 public interface IMovieDAO {
-
     public void insertMovie(Movie movie) throws SQLException;
 
     public Movie selectMovie(int id) throws SQLException;
@@ -23,5 +22,7 @@ public interface IMovieDAO {
 
     public int getTotalMoviesCount() throws SQLException;
 
+
     public LocalDateTime getMovieShowtimeByCinema(int ma_rap, int ma_phim) throws SQLException;
+
 }

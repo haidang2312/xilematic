@@ -2,6 +2,8 @@ package model;
 
 import java.time.LocalDate;
 
+import java.time.LocalDate;
+
 public class Movie {
 
     private int id;
@@ -12,8 +14,6 @@ public class Movie {
     private LocalDate releaseDate;
     private int rate;
     private boolean hot;
-    //1 - dang chieu(true)
-    //0 - sap chieu(false)
     private boolean status;
     private String actor;
     private String director;

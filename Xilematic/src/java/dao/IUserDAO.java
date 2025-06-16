@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.util.List;
 import model.User;
 
+
 public interface IUserDAO {
 
     public void insertUser(User user) throws SQLException;

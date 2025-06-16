@@ -1,4 +1,7 @@
-
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
+ */
 package controller;
 
 import constant.PageLink;
@@ -15,11 +18,10 @@ import java.util.Base64;
 import model.User;
 import service.UserService;
 
-
 @WebServlet(name = "AuthenticateServlet", urlPatterns = {"/authenticate"})
 public class AuthenticationServlet extends HttpServlet {
 
-    private UserService userService = new UserService();
+    private final UserService userService = new UserService();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
