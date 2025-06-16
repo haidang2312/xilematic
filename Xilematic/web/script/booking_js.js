@@ -28,12 +28,12 @@ function updateTicketInfo() {
     const warningElement = document.getElementById('warning');
 
     if (selectedSeats.length > 0) {
-        seatsElement.innerHTML = `Selected Seats: <span>${selectedSeats.map(seat => seat.id).join(', ')}</span>`;
-        priceElement.innerHTML = `Total Price: <span>${totalPrice.toLocaleString()} VND</span>`;
+        seatsElement.innerHTML = `Ghế đã chọn: <span>${selectedSeats.map(seat => seat.id).join(', ')}</span>`;
+        priceElement.innerHTML = `Tổng: <span>${totalPrice.toLocaleString()} VND</span>`;
         warningElement.style.display = 'none';
     } else {
-        seatsElement.innerHTML = 'Selected Seats: <span>None</span>';
-        priceElement.innerHTML = 'Total Price: <span>0 VND</span>';
+        seatsElement.innerHTML = 'Ghế đã chọn: <span>None</span>';
+        priceElement.innerHTML = 'Tổng: <span>0 VND</span>';
         warningElement.style.display = 'block';
     }
 }

@@ -80,7 +80,7 @@
                     <input type="hidden" name="selectedSeats" id="f-seats">
                     <input type="hidden" name="totalPrice" id="f-totalPrice">
                     <p id="selected-seats">Ghế đã chọn: None</p>
-                    <p id="total-price">Tổng: 0 VND</p>
+                    <p id="total-price">Tổng:0 VND</p>
                     <p id="warning">Vui lòng chọn ít nhất 1 ghế!</p>
                     <button class="btn-book" type="submit" onclick="submitBooking()">Xác nhận</button>
                 </form>
