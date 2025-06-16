@@ -1,10 +1,5 @@
-<%-- 
-    Document   : admin
-    Created on : Jun 3, 2025, 8:23:52 PM
-    Author     : ADMIN
---%>
 
-<%@page import="service.MovieServiceImpl"%>
+<%@page import="service.MovieService"%>
 <%@page import="service.IMovieService"%>
 <%@page import="model.Movie"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
