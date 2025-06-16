@@ -47,7 +47,7 @@ public class BinhLuanDAO implements IBinhLuanDAO{
         String sql = "SELECT bl.*, nd.ten_tai_khoan " +
                      "FROM BinhLuan bl " +
                      "JOIN NguoiDung nd ON bl.ma_nguoi_dung = nd.ma_nguoi_dung " +
-                     "WHERE bl.ma_phim = ? AND bl.trangThai = true " +
+                     "WHERE bl.ma_phim = ? AND bl.trang_thai = 1 " +
                      "ORDER BY bl.ngay_tao DESC";
         
         try (Connection conn = DBConnection.getConnection();
@@ -58,12 +58,12 @@ public class BinhLuanDAO implements IBinhLuanDAO{
             try (ResultSet rs = pstmt.executeQuery()) {
                 while (rs.next()) {
                     BinhLuan binhLuan = new BinhLuan();
-                    binhLuan.setMaBinhLuan(rs.getInt("maBinhLuan"));
-                    binhLuan.setMaNguoiDung(rs.getInt("maNguoiDung"));
-                    binhLuan.setMaPhim(rs.getInt("maPhim"));
-                    binhLuan.setNoiDung(rs.getString("noiDung"));
-                    binhLuan.setNgayTao(rs.getDate("ngayTao").toLocalDate());
-                    binhLuan.setTrangThai(rs.getBoolean("trangThai"));
+                    binhLuan.setMaBinhLuan(rs.getInt("ma_binh_luan"));
+                    binhLuan.setMaNguoiDung(rs.getInt("ma_nguoi_dung"));
+                    binhLuan.setMaPhim(rs.getInt("ma_phim"));
+                    binhLuan.setNoiDung(rs.getString("noi_dung"));
+                    binhLuan.setNgayTao(rs.getDate("ngay_tao").toLocalDate());
+                    binhLuan.setTrangThai(rs.getBoolean("trang_thai"));
                     
                    
                     danhSachBinhLuan.add(binhLuan);
@@ -79,7 +79,7 @@ public class BinhLuanDAO implements IBinhLuanDAO{
 
     // Xóa bình luận (soft delete)
     public boolean xoaBinhLuan(int maBinhLuan, int maNguoiDung) {
-        String sql = "UPDATE BinhLuan SET trang_thai = false WHERE ma_binh_luan = ? AND ma_nguoi_dung = ?";
+        String sql = "UPDATE BinhLuan SET trang_thai = 0 WHERE ma_binh_luan = ? AND ma_nguoi_dung = ?";
         
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
@@ -99,7 +99,7 @@ public class BinhLuanDAO implements IBinhLuanDAO{
 
     // Đếm số lượng bình luận cho một phim
     public int demSoBinhLuan(int maPhim) {
-        String sql = "SELECT COUNT(*) AS soLuongBinhLuan FROM BinhLuan WHERE ma_phim = ? AND trang_thai = true";
+        String sql = "SELECT COUNT(*) AS soLuongBinhLuan FROM BinhLuan WHERE ma_phim = ? AND trang_thai = 1";
         
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
@@ -146,7 +146,7 @@ public BinhLuan layChiTietBinhLuan(int maBinhLuan) {
                  "FROM BinhLuan bl " +
                  "JOIN NguoiDung nd ON bl.ma_nguoi_dung = nd.ma_nguoi_dung " +
                  "JOIN Phim p ON bl.ma_phim = p.ma_phim " +
-                 "WHERE bl.ma_binh_luan = ? AND bl.trang_thai = true";
+                 "WHERE bl.ma_binh_luan = ? AND bl.trang_thai = 1";
     
     try (Connection conn = DBConnection.getConnection();
          PreparedStatement pstmt = conn.prepareStatement(sql)) {
@@ -155,13 +155,15 @@ public BinhLuan layChiTietBinhLuan(int maBinhLuan) {
         
         try (ResultSet rs = pstmt.executeQuery()) {
             if (rs.next()) {
-                BinhLuan binhLuan = new BinhLuan();
-                binhLuan.setMaBinhLuan(rs.getInt("maBinhLuan"));
-                binhLuan.setMaNguoiDung(rs.getInt("maNguoiDung"));
-                binhLuan.setMaPhim(rs.getInt("maPhim"));
-                binhLuan.setNoiDung(rs.getString("noiDung"));
-                binhLuan.setNgayTao(rs.getDate("ngayTao").toLocalDate());
-                binhLuan.setTrangThai(rs.getBoolean("trangThai"));
+                
+                 BinhLuan binhLuan = new BinhLuan();
+                    binhLuan.setMaBinhLuan(rs.getInt("ma_binh_luan"));
+                    binhLuan.setMaNguoiDung(rs.getInt("ma_nguoi_dung"));
+                    binhLuan.setMaPhim(rs.getInt("ma_phim"));
+                    binhLuan.setNoiDung(rs.getString("noi_dung"));
+                    binhLuan.setNgayTao(rs.getDate("ngay_tao").toLocalDate());
+                    binhLuan.setTrangThai(rs.getBoolean("trang_thai"));
+                    
                 
                 
                 return binhLuan;
@@ -181,7 +183,7 @@ public List<BinhLuan> layBinhLuanCuaNguoiDung(int maNguoiDung) {
     String sql = "SELECT bl.*, p.ten_phim " +
                  "FROM BinhLuan bl " +
                  "JOIN Phim p ON bl.ma_phim = p.ma_phim " +
-                 "WHERE bl.ma_nguoi_dung = ? AND bl.trang_thai = true " +
+                 "WHERE bl.ma_nguoi_dung = ? AND bl.trang_thai = 1 " +
                  "ORDER BY bl.ngay_tao DESC";
     
     
@@ -192,13 +194,14 @@ public List<BinhLuan> layBinhLuanCuaNguoiDung(int maNguoiDung) {
         
         try (ResultSet rs = pstmt.executeQuery()) {
             while (rs.next()) {
-                BinhLuan binhLuan = new BinhLuan();
-                binhLuan.setMaBinhLuan(rs.getInt("maBinhLuan"));
-                binhLuan.setMaNguoiDung(rs.getInt("maNguoiDung"));
-                binhLuan.setMaPhim(rs.getInt("maPhim"));
-                binhLuan.setNoiDung(rs.getString("noiDung"));
-                binhLuan.setNgayTao(rs.getDate("ngayTao").toLocalDate());
-                binhLuan.setTrangThai(rs.getBoolean("trangThai"));
+                 BinhLuan binhLuan = new BinhLuan();
+                    binhLuan.setMaBinhLuan(rs.getInt("ma_binh_luan"));
+                    binhLuan.setMaNguoiDung(rs.getInt("ma_nguoi_dung"));
+                    binhLuan.setMaPhim(rs.getInt("ma_phim"));
+                    binhLuan.setNoiDung(rs.getString("noi_dung"));
+                    binhLuan.setNgayTao(rs.getDate("ngay_tao").toLocalDate());
+                    binhLuan.setTrangThai(rs.getBoolean("trang_thai"));
+                    
                 
               
                 danhSachBinhLuan.add(binhLuan);
@@ -216,7 +219,7 @@ public List<BinhLuan> layBinhLuanCuaNguoiDung(int maNguoiDung) {
 public boolean kiemTraQuyenSuaBinhLuan(int maBinhLuan, int maNguoiDung) {
     String sql = "SELECT COUNT(*) AS soLuong " +
                  "FROM BinhLuan " +
-                 "WHERE maBinhLuan = ? AND maNguoiDung = ? AND trangThai = true";
+                 "WHERE ma_binh_luan = ? AND ma_nguoi_dung = ? AND trang_thai = 1";
     
     try (Connection conn = DBConnection.getConnection();
          PreparedStatement pstmt = conn.prepareStatement(sql)) {
@@ -240,11 +243,11 @@ public boolean kiemTraQuyenSuaBinhLuan(int maBinhLuan, int maNguoiDung) {
 @Override
 public List<BinhLuan> layBinhLuanTheoTrang(int maPhim, int trang, int soPhanTuTrenTrang) {
     List<BinhLuan> danhSachBinhLuan = new ArrayList<>();
-    String sql = "SELECT bl.*, nd.tenNguoiDung " +
+    String sql = "SELECT bl.*, nd.ten_tai_khoan " +
                  "FROM BinhLuan bl " +
-                 "JOIN NguoiDung nd ON bl.maNguoiDung = nd.maNguoiDung " +
-                 "WHERE bl.maPhim = ? AND bl.trangThai = true " +
-                 "ORDER BY bl.ngayTao DESC " +
+                 "JOIN NguoiDung nd ON bl.ma_nguoi_dung = nd.ma_nguoi_dung " +
+                 "WHERE bl.ma_phim = ? AND bl.trang_thai = 1 " +
+                 "ORDER BY bl.ngay_tao DESC " +
                  "LIMIT ? OFFSET ?";
     
     try (Connection conn = DBConnection.getConnection();
@@ -256,13 +259,14 @@ public List<BinhLuan> layBinhLuanTheoTrang(int maPhim, int trang, int soPhanTuTr
         
         try (ResultSet rs = pstmt.executeQuery()) {
             while (rs.next()) {
-                BinhLuan binhLuan = new BinhLuan();
-                binhLuan.setMaBinhLuan(rs.getInt("maBinhLuan"));
-                binhLuan.setMaNguoiDung(rs.getInt("maNguoiDung"));
-                binhLuan.setMaPhim(rs.getInt("maPhim"));
-                binhLuan.setNoiDung(rs.getString("noiDung"));
-                binhLuan.setNgayTao(rs.getDate("ngayTao").toLocalDate());
-                binhLuan.setTrangThai(rs.getBoolean("trangThai"));
+                 BinhLuan binhLuan = new BinhLuan();
+                    binhLuan.setMaBinhLuan(rs.getInt("ma_binh_luan"));
+                    binhLuan.setMaNguoiDung(rs.getInt("ma_nguoi_dung"));
+                    binhLuan.setMaPhim(rs.getInt("ma_phim"));
+                    binhLuan.setNoiDung(rs.getString("noi_dung"));
+                    binhLuan.setNgayTao(rs.getDate("ngay_tao").toLocalDate());
+                    binhLuan.setTrangThai(rs.getBoolean("trang_thai"));
+                    
                 
                 danhSachBinhLuan.add(binhLuan);
             }
@@ -278,12 +282,12 @@ public List<BinhLuan> layBinhLuanTheoTrang(int maPhim, int trang, int soPhanTuTr
 @Override
 public List<BinhLuan> timKiemBinhLuan(int maPhim, String tuKhoa) {
     List<BinhLuan> danhSachBinhLuan = new ArrayList<>();
-    String sql = "SELECT bl.*, nd.tenNguoiDung " +
+    String sql = "SELECT bl.*, nd.ten_tai_khoan " +
                  "FROM BinhLuan bl " +
-                 "JOIN NguoiDung nd ON bl.maNguoiDung = nd.maNguoiDung " +
-                 "WHERE bl.maPhim = ? AND bl.trangThai = true " +
-                 "AND LOWER(bl.noiDung) LIKE LOWER(?) " +
-                 "ORDER BY bl.ngayTao DESC";
+                 "JOIN NguoiDung nd ON bl.ma_nguoi_dung = nd.ma_nguoi_dung " +
+                 "WHERE bl.ma_phim= ? AND bl.trang_thai = 1 " +
+                 "AND LOWER(bl.noi_dung) LIKE LOWER(?) " +
+                 "ORDER BY bl.ngay_tao DESC";
     
     try (Connection conn = DBConnection.getConnection();
          PreparedStatement pstmt = conn.prepareStatement(sql)) {
@@ -293,13 +297,14 @@ public List<BinhLuan> timKiemBinhLuan(int maPhim, String tuKhoa) {
         
         try (ResultSet rs = pstmt.executeQuery()) {
             while (rs.next()) {
-                BinhLuan binhLuan = new BinhLuan();
-                binhLuan.setMaBinhLuan(rs.getInt("maBinhLuan"));
-                binhLuan.setMaNguoiDung(rs.getInt("maNguoiDung"));
-                binhLuan.setMaPhim(rs.getInt("maPhim"));
-                binhLuan.setNoiDung(rs.getString("noiDung"));
-                binhLuan.setNgayTao(rs.getDate("ngayTao").toLocalDate());
-                binhLuan.setTrangThai(rs.getBoolean("trangThai"));
+                 BinhLuan binhLuan = new BinhLuan();
+                    binhLuan.setMaBinhLuan(rs.getInt("ma_binh_luan"));
+                    binhLuan.setMaNguoiDung(rs.getInt("ma_nguoi_dung"));
+                    binhLuan.setMaPhim(rs.getInt("ma_phim"));
+                    binhLuan.setNoiDung(rs.getString("noi_dung"));
+                    binhLuan.setNgayTao(rs.getDate("ngay_tao").toLocalDate());
+                    binhLuan.setTrangThai(rs.getBoolean("trang_thai"));
+                    
                 
               
                 danhSachBinhLuan.add(binhLuan);

@@ -246,7 +246,7 @@ button {
           <button onclick="addComment(${movie.id})">Gửi bình luận</button>
         </c:when>
         <c:otherwise>
-          <p>Vui lòng <a href="${pageContext.request.contextPath}/login">đăng nhập</a> để bình luận</p>
+          <p>Vui lòng <a href="${pageContext.request.contextPath}/login.jsp">đăng nhập</a> để bình luận</p>
         </c:otherwise>
       </c:choose>
     </div>
