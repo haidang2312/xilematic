@@ -1,16 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
- */
 package service;
 
 import java.util.List;
 import model.Movie;
 
-/**
- *
- * @author ADMIN
- */
 public interface IMovieService {
 
     public void insertMovie(Movie movie);
@@ -27,4 +19,5 @@ public interface IMovieService {
 
     public int getTotalMoviesCount();
 
+    public String getMovieShowtimeByCinema(int ma_rap, int ma_phim);
 }

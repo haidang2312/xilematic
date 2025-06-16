@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package service;
 
 import java.sql.SQLException;
@@ -10,21 +6,19 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.Movie;
 import dao.MovieDAO;
+import utils.Helper;
 
-/**
- *
- * @author ADMIN
- */
-public class MovieServiceImpl implements IMovieService {
+public class MovieService implements IMovieService {
 
     private MovieDAO movieDao = new MovieDAO();
+    private Helper helper = new Helper();
 
     @Override
     public void insertMovie(Movie movie) {
         try {
             movieDao.insertMovie(movie);
         } catch (SQLException ex) {
-            Logger.getLogger(MovieServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MovieService.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -33,7 +27,7 @@ public class MovieServiceImpl implements IMovieService {
         try {
             return movieDao.selectMovie(id);
         } catch (SQLException ex) {
-            Logger.getLogger(MovieServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MovieService.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;
     }
@@ -43,7 +37,7 @@ public class MovieServiceImpl implements IMovieService {
         try {
             movieDao.selectAllMovies();
         } catch (SQLException ex) {
-            Logger.getLogger(MovieServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MovieService.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;
     }
@@ -53,7 +47,7 @@ public class MovieServiceImpl implements IMovieService {
         try {
             return movieDao.deleteMovie(id);
         } catch (SQLException ex) {
-            Logger.getLogger(MovieServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MovieService.class.getName()).log(Level.SEVERE, null, ex);
         }
         return false;
     }
@@ -63,7 +57,7 @@ public class MovieServiceImpl implements IMovieService {
         try {
             movieDao.updateMovie(movie);
         } catch (SQLException ex) {
-            Logger.getLogger(MovieServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MovieService.class.getName()).log(Level.SEVERE, null, ex);
         }
         return false;
     }
@@ -73,7 +67,7 @@ public class MovieServiceImpl implements IMovieService {
         try {
             return movieDao.getMovieForPage(currentPage, pageSize);
         } catch (SQLException ex) {
-            Logger.getLogger(MovieServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MovieService.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;
     }
@@ -83,11 +77,19 @@ public class MovieServiceImpl implements IMovieService {
         try {
             return movieDao.getTotalMoviesCount();
         } catch (SQLException ex) {
-            Logger.getLogger(MovieServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MovieService.class.getName()).log(Level.SEVERE, null, ex);
         }
         return -1;
     }
-    
 
+    @Override
+    public String getMovieShowtimeByCinema(int ma_rap, int ma_phim) {
+        try {
+            return helper.formatLocalDateTime(movieDao.getMovieShowtimeByCinema(ma_rap, ma_phim));
+        } catch (SQLException ex) {
+            Logger.getLogger(MovieService.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return "N/A";
+    }
 
 }

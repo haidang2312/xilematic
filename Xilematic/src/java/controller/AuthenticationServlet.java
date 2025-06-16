@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
- */
+
 package controller;
 
 import constant.PageLink;
@@ -16,13 +13,13 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import java.util.Base64;
 import model.User;
-import service.IUserService;
-import service.UserServiceImpl;
+import service.UserService;
+
 
 @WebServlet(name = "AuthenticateServlet", urlPatterns = {"/authenticate"})
 public class AuthenticationServlet extends HttpServlet {
 
-    private final IUserService userService = new UserServiceImpl();
+    private UserService userService = new UserService();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)

@@ -6,11 +6,11 @@ import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import service.IUserService;
-import service.UserServiceImpl;
+import service.UserService;
 
 public class Validator {
 
-    private static IUserService userService = new UserServiceImpl();
+    private static IUserService userService = new UserService();
 
     public static boolean isEmpty(String str) {
         return str == null || str.trim().isEmpty();
