@@ -11,13 +11,13 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import model.Movie;
-import movieService.IMovieService;
-import movieService.MovieServiceImpl;
+import service.IMovieService;
+import service.MovieService;
 
 @WebServlet(name = "MovieServlet", urlPatterns = {"/movies"})
 public class MovieServlet extends HttpServlet {
 
-    private final IMovieService movieService = new MovieServiceImpl();
+    private final IMovieService movieService = new MovieService();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
