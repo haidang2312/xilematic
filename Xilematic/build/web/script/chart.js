@@ -6,7 +6,7 @@ const lineColor = 'rgba(75, 192, 192, 1)';
 const fillColor = 'rgba(75, 192, 192, 0.2)';
 
 // Số điểm dữ liệu ban đầu
-const initialDataPoints = 12;
+const initialDataPoints = 20;
 let labels = Array.from({length: initialDataPoints}, (_, i) => i + 1);
 
 // Tạo dữ liệu ngẫu nhiên ban đầu
@@ -94,7 +94,7 @@ function updateChart() {
 }
 
 // Cập nhật dữ liệu mỗi 1 giây (1000ms)
-const updateInterval = setInterval(updateChart, 2000);
+const updateInterval = setInterval(updateChart, 5000);
 
 // Dừng cập nhật khi trang bị đóng
 window.addEventListener('beforeunload', () => {

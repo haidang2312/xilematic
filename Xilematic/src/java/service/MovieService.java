@@ -81,7 +81,6 @@ public class MovieService implements IMovieService {
         }
         return -1;
     }
-
     @Override
     public String getMovieShowtimeByCinema(int ma_rap, int ma_phim) {
         try {
@@ -91,5 +90,6 @@ public class MovieService implements IMovieService {
         }
         return "N/A";
     }
+
 
 }

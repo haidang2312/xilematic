@@ -11,7 +11,7 @@ public class Movie {
     private String trailer;
     private String image;
     private String description;
-    private LocalDate releaseDate;
+    private LocalDate releaseDate = LocalDate.now();
     private int rate;
     private boolean hot;
     private boolean status;

@@ -8,6 +8,7 @@ import model.Movie;
 
 
 public interface IMovieDAO {
+
     public void insertMovie(Movie movie) throws SQLException;
 
     public Movie selectMovie(int id) throws SQLException;
