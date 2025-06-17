@@ -3,20 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/webPRJ/Xilematic/src/java/model/CumRap.java</file>
-            <file>file:/D:/webPRJ/Xilematic/src/java/model/TheLoai.java</file>
-            <file>file:/D:/webPRJ/Xilematic/web/home/detail.jsp</file>
-            <file>file:/D:/webPRJ/Xilematic/src/java/controller/DetailServlet.java</file>
-            <file>file:/D:/webPRJ/Xilematic/src/java/commentService/CommentService.java</file>
-            <file>file:/D:/webPRJ/Xilematic/web/home/home.jsp</file>
-            <file>file:/D:/webPRJ/Xilematic/src/java/model/HeThongRap.java</file>
-            <file>file:/D:/webPRJ/Xilematic/src/java/model/RapPhim.java</file>
-            <file>file:/D:/webPRJ/Xilematic/src/java/controller/HomeServlet.java</file>
-            <file>file:/D:/webPRJ/Xilematic/src/java/model/LichChieu.java</file>
-            <file>file:/D:/webPRJ/Xilematic/web/WEB-INF/web.xml</file>
-            <file>file:/D:/webPRJ/Xilematic/src/java/constant/PageLink.java</file>
-            <file>file:/D:/webPRJ/Xilematic/src/java/commentDAO/BinhLuanDAO.java</file>
-            <file>file:/D:/webPRJ/Xilematic/src/java/controller/AuthenticationServlet.java</file>
+            <file>file:/D:/webPRJ/Xilematic/web/booking.jsp</file>
+            <file>file:/D:/webPRJ/Xilematic/src/java/model/Movie.java</file>
+            <file>file:/D:/webPRJ/Xilematic/src/java/BookingService/BookingServiceImp.java</file>
+            <file>file:/D:/webPRJ/Xilematic/src/java/controller/BookingServlet.java</file>
         </group>
     </open-files>
 </project-private>
